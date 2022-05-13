@@ -1,0 +1,16 @@
+/** Basic config file **/
+
+configuration {
+  show-icons:         true;
+  icon-theme:         "Papirus";
+  combi-modi:         "drun";
+  modi:               "combi";
+  display-window:     "window";
+  display-drun:       "drun";
+}
+
+@theme "oxide.rasi"
+
+listview {
+    lines: 10;
+}

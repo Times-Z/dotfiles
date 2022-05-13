@@ -1,0 +1,82 @@
+# wm independent hotkeys
+#
+
+# terminal emulator
+ctrl + alt + t
+	kitty
+
+# program launcher
+alt + @space
+	rofi -show drun
+
+# make sxhkd reload its configuration files:
+mod4 + Escape
+	pkill -USR1 -x sxhkd
+
+# File manager
+mod4 + e
+        nautilus --new-window ~
+
+#
+# bspwm hotkeys
+#
+
+# restart bspwm
+mod4 + alt + r
+	bspc wm -r
+
+# close node
+ctrl + alt + q
+	bspc node -c
+
+# Toogle node fullscreen
+mod4 + w
+	bspc node -t {fullscreen, tiled}
+
+#
+# focus/swap
+#
+
+# focus the last node/desktop
+mod4 + Tab
+	bspc desktop -f next.local
+
+mod4 + shift + Tab
+       bspc desktop -f prev.local
+
+# Send current node to the given desktop
+mod4 + {1-9,0}
+        bspc node --to-desktop '^{1-9,10}'
+
+#
+# preselect
+#
+
+# preselect the direction
+mod4 + ctrl + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+mod4 + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+#
+# move/resize
+#
+
+# Expand/contract a window by moving one of its side outward/inward
+ctrl + alt + {Left,Down,Up,Right}
+    STEP=20; SELECTION={1,2,3,4}; \
+    bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
+    bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
+
+# Swap window
+mod4 + {Left,Down,Up,Right}
+	bspc node --swap {west,south,north,east}
+
+# Other
+Print
+  flameshot gui
+
+mod4 + alt + l
+  betterlockscreen -l dimblur
