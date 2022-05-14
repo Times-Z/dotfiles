@@ -27,8 +27,11 @@ function notify() {
 case $command in
     
     "--notify")
-        get_metadata
-        notify
+        # Notify only change event
+        if [ "$PLAYER_EVENT" == "change" ] ; then
+            get_metadata
+            notify
+        fi
     ;;
     
     *)
