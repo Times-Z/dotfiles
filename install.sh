@@ -51,6 +51,7 @@ install --dir spotify-tui ~/.config/spotify-tui
 install --dir spotifyd ~/.config/spotifyd
 install --dir sxhkd ~/.config/sxhkd
 
+install --file .zshrc ~/.zshrc
 install --file .xinitrc ~/.xinitrc
 install --file .zprofile ~/.zprofile
 install --file betterlockscreenrc ~/.config/betterlockscreenrc
