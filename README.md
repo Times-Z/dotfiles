@@ -28,6 +28,11 @@ Polybar :
 
 ![Polybar](./.assets/polybar.png)
 
+
+Spotifyd dunst notif :
+
+![SpotifyDNotif](./.assets/spotifyd-notif.png)
+
 Picom blur/neovim/neofetch :
 
 ![PicomNeovimNeofetch](./.assets/nvim_neofetch_picom_bspwm.png)

@@ -48,6 +48,7 @@ install --dir polybar ~/.config/polybar
 install --dir ranger ~/.config/ranger
 install --dir rofi ~/.config/rofi
 install --dir spotify-tui ~/.config/spotify-tui
+install --dir spotifyd ~/.config/spotifyd
 install --dir sxhkd ~/.config/sxhkd
 
 install --file .xinitrc ~/.xinitrc
