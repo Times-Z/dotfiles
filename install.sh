@@ -5,7 +5,7 @@ USER=$(whoami)
 
 function backup_config() {
     echo "=> Backup $1 configuration"
-    # cp -R $1 $1.bck
+    cp -R $1 $1.bck
 }
 
 function install() {
