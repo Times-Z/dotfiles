@@ -14,7 +14,8 @@ function install() {
     case $1 in
         
         "--dir")
-            cp -R $SCRIPT_DIR/$2/* $3
+            mkdir -p $3
+            cp -R $SCRIPT_DIR/$2/* $3/
             echo "dir mode"
         ;;
         
