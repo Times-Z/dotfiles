@@ -1,20 +1,20 @@
--- Just an example, supposed to be placed in /lua/custom/
-
 local M = {}
 
--- make sure you maintain the structure of `core/default_config.lua` here,
--- example of changing theme:
+local userPlugins = require "custom.plugins"
+local userMapping = require "custom.mappings"
 
 M.ui = {
    theme = "catppuccin",
 }
 
--- chadrc.lua
-
-local userPlugins = require "custom.plugins"
-
 M.plugins = {
    user = userPlugins
+}
+
+M.mappings = {
+   userMapping.rnvimr,
+   userMapping.treetoggle,
+   userMapping.global,
 }
 
 return M

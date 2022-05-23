@@ -34,11 +34,6 @@ return {
         config = function()
             require("neoscroll").setup()
         end,
-
-        -- lazy loading
-        setup = function()
-            require("core.utils").packer_lazy_load "neoscroll.nvim"
-        end
     },
 
     ["nathom/filetype.nvim"] = {},
@@ -62,22 +57,14 @@ return {
     ["terrortylor/nvim-comment"] = {
         cmd = "CommentToggle",
         config = function()
-            require("plugins.configs.others")
-        end,
-        setup = function()
-            require("core.mappings").comment()
+            require('nvim_comment').setup()
         end
     },
 
     ["nvim-telescope/telescope.nvim"] = {
         cmd = "Telescope",
-
-        setup = function()
-            require("core.mappings").telescope()
-        end,
-
         config = function()
-            require "plugins.configs.telescope"
+            require('telescope').setup()
         end
     },
 
@@ -99,10 +86,7 @@ return {
     ["lewis6991/gitsigns.nvim"] = {
         opt = true,
         config = function()
-            require("plugins.configs.others").gitsigns()
-        end,
-        setup = function()
-            require("core.utils").packer_lazy_load "gitsigns.nvim"
+            require('gitsigns').setup()
         end
     },
 
