@@ -11,7 +11,7 @@ function display_yad {
         yad
         --undecorated --fixed --close-on-unfocus --borders=0
         --button="Kill VPN"
-        --posx="1320" --posy="80"
+        --posx="3250" --posy="30"
     )
     "${cmd[@]}"
     exval=$?

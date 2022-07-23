@@ -32,7 +32,8 @@ case "$1" in
         fi
         
         LC_TIME="fr_FR.UTF-8" yad --calendar --undecorated --fixed --close-on-unfocus --no-buttons \
-        --width="$YAD_WIDTH" --height="$YAD_HEIGHT" --posx="1050" --posy="80" \
+        --width="$YAD_WIDTH" --height="$YAD_HEIGHT" --posx="2900" --posy="30" \
+        
         --title="yad-calendar" --borders=0 >/dev/null &
     ;;
     *)
