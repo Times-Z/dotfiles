@@ -36,7 +36,7 @@ function get_metadata() {
 
 function display_data() {
     if [ "$STATUS" = "Stopped" ]; then
-        echo "No music is playing"
+        echo " "
     elif [ "$STATUS" = "Paused"  ]; then
         get_metadata "Paused"
     elif [ "$STATUS" = "No player is running"  ]; then
@@ -73,6 +73,14 @@ case $command in
     "--get-status")
         get_status
         display_status
+    ;;
+
+  "--get-status-exit-code")
+      get_status
+      if [ "$STATUS" == "Stopped" ] || [ "$STATUS" == "No player is running"] ;
+      then
+        exit 1
+      fi
     ;;
     
     "--scroll")
