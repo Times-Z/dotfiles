@@ -1,20 +1,16 @@
 local M = {}
 
 local userPlugins = require "custom.plugins"
-local userMapping = require "custom.mappings"
+-- local pluginConfs = require "custom.plugins.configs"
 
 M.ui = {
-   theme = "catppuccin",
+    theme = "catppuccin"
 }
 
 M.plugins = {
-   user = userPlugins
+    user = userPlugins
 }
 
-M.mappings = {
-   userMapping.rnvimr,
-   userMapping.treetoggle,
-   userMapping.global,
-}
+M.mappings = require "custom.mappings"
 
 return M

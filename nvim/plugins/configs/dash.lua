@@ -1,9 +1,6 @@
-local g = vim.g
+local db = require('dashboard')
 
-g.dashboard_disable_at_vimenter = 0
-g.dashboard_disable_statusline = 1
-g.dashboard_default_executive = "telescope"
-g.dashboard_custom_header = {
+db.custom_header = {
    "                                   ",
    "                                   ",
    "                                   ",
@@ -21,18 +18,63 @@ g.dashboard_custom_header = {
    "                                   ",
 }
 
-g.dashboard_custom_section = {
-   a = { description = { "  Find File                 space f f" }, command = "Telescope find_files" },
-   b = { description = { "  Recents                   space f o" }, command = "Telescope oldfiles" },
-   c = { description = { "  Find Word                 space f w" }, command = "Telescope live_grep" },
-   d = { description = { "洛  New File                 space f n" }, command = "DashboardNewFile" },
-   e = { description = { "  Bookmarks                 space b m" }, command = "Telescope marks" },
-   f = { description = { "  Load Last Session         space l  " }, command = "SessionLoad" },
-   g = { description = { "🗀  File Browser              space ,  " }, command = "RnvimrToggle" },
-   h = { description = { "➤  Three toogle              space ;  " }, command = "NvimTreeToggle" },
+db.hide_statusline = False
+db.dashboard_disable_at_vimenter = 0
+db.dashboard_disable_statusline = 1
+db.dashboard_default_executive = "telescope"
+
+db.custom_center = {
+   {
+      icon = "  ",
+      desc = "Find File                                   ",
+      shortcut = "space f f",
+      action = "Telescope find_files"
+   },
+   {
+      icon = " ",
+      desc = "Recents                                     ",
+      shortcut = "space f o",
+      action = "Telescope oldfiles"
+   },
+   {
+      icon = " ",
+      desc = "Find Word                                   ",
+      shortcut = "space f w",
+      action = "Telescope live_grep"
+   },
+   {
+      icon = "洛 ",
+      desc = "New File                                   ",
+      shortcut = "space f n",
+      action = "DashboardNewFile"
+   },
+   {
+      icon = " ",
+      desc = "Bookmarks                                   ",
+      shortcut = "space b m",
+      action = "Telescope marks"
+   },
+   {
+      icon = " ",
+      desc = "Load Last Session                           ",
+      shortcut = 'space l  "',
+      action = "SessionLoad"
+   },
+   {
+      icon = "🗀 ",
+      desc = "File Browser                                  ",
+      shortcut = "space ,",
+      action = "RnvimrToggle"
+   },
+   {
+      icon = "➤ ",
+      desc = "three toogle                                   ",
+      shortcut = "space ;",
+      action = "NvimTreeToggle"
+   }
 }
 
-g.dashboard_custom_footer = {
+db.custom_footer = {
    "    Deleted code is debugged code.    ",
    "           _ ._  _ , _ ._             ",
    "         (_ ' ( `  )_  .__)           ",

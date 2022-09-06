@@ -1,39 +1,45 @@
 return {
-
     ["neovim/nvim-lspconfig"] = {
-        after = "nvim-lsp-installer",
-        module = "lspconfig",
+        opt = true,
+        event = "BufReadPre",
+        wants = {"nvim-lsp-installer"},
         config = function()
-            local lsp_module = require "lspconfig"
-            require "plugins.configs.lsp_installer"
-            require "plugins.configs.lspconfig"
-            -- Enable (broadcasting) snippet capability for completion
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities.textDocument.completion.completionItem.snippetSupport = true
-            lsp_module.pyright.setup {}
-            lsp_module.bashls.setup {}
-            lsp_module.cssmodules_ls.setup {}
-            lsp_module.dockerls.setup {}
-            lsp_module.dotls.setup {}
-            lsp_module.emmet_ls.setup {}
-            lsp_module.eslint.setup {}
-            lsp_module.gopls.setup {}
-            lsp_module.golangci_lint_ls.setup {}
-            lsp_module.html.setup {
-                capabilities = capabilities
-            }
-            lsp_module.jsonls.setup {
-                capabilities = capabilities
-            }
-            lsp_module.intelephense.setup {}
-        end
+            require("custom.plugins.configs.lsp.lsp").setup()
+        end,
+        requires = {"williamboman/nvim-lsp-installer"}
+        -- after = "nvim-lsp-installer",
+        -- module = "lspconfig",
+        -- config = function()
+        --     local lsp_module = require "lspconfig"
+        --     require "plugins.configs.lsp_installer"
+        --     require "plugins.configs.lspconfig"
+        --     -- Enable (broadcasting) snippet capability for completion
+        --     local capabilities = vim.lsp.protocol.make_client_capabilities()
+        --     capabilities.textDocument.completion.completionItem.snippetSupport = true
+        --     lsp_module.pyright.setup {}
+        --     lsp_module.bashls.setup {}
+        --     lsp_module.cssmodules_ls.setup {}
+        --     lsp_module.dockerls.setup {}
+        --     lsp_module.dotls.setup {}
+        --     lsp_module.emmet_ls.setup {}
+        --     lsp_module.eslint.setup {}
+        --     lsp_module.gopls.setup {}
+        --     lsp_module.golangci_lint_ls.setup {}
+        --     lsp_module.html.setup {
+        --         capabilities = capabilities
+        --     }
+        --     lsp_module.jsonls.setup {
+        --         capabilities = capabilities
+        --     }
+        --     lsp_module.intelephense.setup {}
+        -- end
     },
 
     ["karb94/neoscroll.nvim"] = {
         opt = true,
         config = function()
             require("neoscroll").setup()
-        end,
+        end
     },
 
     ["nathom/filetype.nvim"] = {},
@@ -42,10 +48,6 @@ return {
         config = function()
             require("custom.plugins.configs.rnvimr")
         end
-    },
-
-    ["sindrets/diffview.nvim"] = {
-        requires = 'nvim-lua/plenary.nvim'
     },
 
     ["glepnir/dashboard-nvim"] = {
