@@ -43,7 +43,7 @@ install --dir dunst ~/.config/dunst
 install --dir gpicview ~/.config/gpicview
 install --dir kitty ~/.config/kitty
 install --dir neofetch ~/.config/neofetch
-install --dir nvim ~/.config/nvim/lua/custom
+install --dir nvim ~/.config/nvim
 install --dir picom ~/.config/picom
 install --dir polybar ~/.config/polybar
 install --dir ranger ~/.config/ranger

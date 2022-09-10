@@ -15,7 +15,7 @@ wallpaper_cmd="feh --bg-center ~/.config/wallpaper"
 # default theme
 loginbox=00000066
 loginshadow=00000000
-locktext="Type password to unlock..."
+locktext="In linux we trust "
 font="delugia"
 ringcolor=ffffffff
 insidecolor=00000000

@@ -32,37 +32,25 @@ db.custom_center = {
    },
    {
       icon = " ",
-      desc = "Recents                                     ",
+      desc = "Recents                                      ",
       shortcut = "space f o",
       action = "Telescope oldfiles"
    },
    {
       icon = " ",
-      desc = "Find Word                                   ",
+      desc = "Find Word                                    ",
       shortcut = "space f w",
       action = "Telescope live_grep"
    },
    {
       icon = "洛 ",
-      desc = "New File                                   ",
+      desc = "New File                                    ",
       shortcut = "space f n",
       action = "DashboardNewFile"
    },
    {
-      icon = " ",
-      desc = "Bookmarks                                   ",
-      shortcut = "space b m",
-      action = "Telescope marks"
-   },
-   {
-      icon = " ",
-      desc = "Load Last Session                           ",
-      shortcut = 'space l  "',
-      action = "SessionLoad"
-   },
-   {
       icon = "🗀 ",
-      desc = "File Browser                                  ",
+      desc = "File Browser                                   ",
       shortcut = "space ,",
       action = "RnvimrToggle"
    },
