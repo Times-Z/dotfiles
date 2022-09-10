@@ -9,7 +9,7 @@ My personal backup dotfiles
 - Dunst
 - Kitty
 - Neofetch
-- Neovim (to used with [nvchad](https://nvchad.github.io/))
+- Neovim
 - Picom
 - Polybar
 - Ranger rifle (mime)
