@@ -11,3 +11,4 @@ vim.g.rnvimr_action = {
     ['<CR>'] = 'NvimEdit tabedit',
     ['o'] = 'NvimEdit tabedit'
 }
+
