@@ -3,7 +3,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.keymap.set('', '<leader>w', '<cmd>write<cr>', {
+vim.keymap.set('n', '<leader>w', '<cmd>write<cr>', {
     desc = 'Save'
 })
 
@@ -30,7 +30,7 @@ vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {
 vim.keymap.set('n', '<leader>fn', '<cmd>DashboardNewFile<cr>', {
     desc = 'New file'
 })
-vim.keymap.set('i', '<leader>m', '<cmd>CodeActionMenu<cr>', {
+vim.keymap.set('n', '<leader>m', '<cmd>CodeActionMenu<cr>', {
     desc = 'code action menu'
 })
 

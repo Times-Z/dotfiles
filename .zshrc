@@ -4,7 +4,7 @@ export PATH="$PATH:$GEM_HOME/bin"
 #export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/timesz/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -95,8 +95,8 @@ PATH="$HOME/.config/rofi/bin:$HOME/.config/composer/vendor/bin:$HOME/Documents/s
 export PATH
 export LANG=en_US.UTF-8
 export EDITOR="nvim"
-export PAGER="nvim"
-export PROJECT="/mnt/DATA_ENCRYPTED/mc/"
+#export PAGER="nvim"
+#export PROJECT="/mnt/DATA_ENCRYPTED/mc/"
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
@@ -110,3 +110,5 @@ export LC_ALL=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias spotifydaemon="systemctl --user restart spotifyd.service"
 alias ls='exa -al --tree --level=1 --icons'
+
+pokemon-colorscripts -r --no-title
