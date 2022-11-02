@@ -15,7 +15,7 @@ mod4 + Escape
 
 # File manager
 mod4 + e
-        nautilus --new-window ~
+	nautilus --new-window ~
 
 #
 # bspwm hotkeys
@@ -48,6 +48,10 @@ mod4 + shift + Tab
 mod4 + {1-9,0}
         bspc node --to-desktop '^{1-9,10}'
 
+# move or select node in direction
+mod4 + {_,shift + }{Left,Down,Up,Right}
+	bspc node --{focus,swap} {west,south,north,east}
+
 #
 # preselect
 #
@@ -71,8 +75,8 @@ ctrl + alt + {Left,Down,Up,Right}
     bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
 
 # Swap window
-mod4 + {Left,Down,Up,Right}
-	bspc node --swap {west,south,north,east}
+#mod4 + {Left,Down,Up,Right}
+#	bspc node --swap {west,south,north,east}
 
 # Other
 Print
@@ -80,3 +84,22 @@ Print
 
 mod4 + alt + l
   betterlockscreen -l dimblur
+
+# Screen brightness
+
+XF86MonBrightness{Down,Up}
+	brightnessctl s 10%{-,+}
+
+# Audio
+
+XF86Audio{Lower,Raise}Volume
+	pactl set-sink-volume 0 {-,+}5%
+
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
+XF86AudioMicMute
+	pactl set-source-mute 1 toggle
+
+XF86WLAN
+	wifi toggle
