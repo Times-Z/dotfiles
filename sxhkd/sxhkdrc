@@ -93,10 +93,10 @@ XF86MonBrightness{Down,Up}
 # Audio
 
 XF86Audio{Lower,Raise}Volume
-	pactl set-sink-volume 0 {-,+}5%
+	pactl set-sink-volume $(pactl info | grep "Default Sink:" | cut -d':' -f2) {-,+}5%
 
 XF86AudioMute
-	pactl set-sink-mute 0 toggle
+	pactl set-sink-mute $(pactl info | grep "Default Sink:" | cut -d':' -f2) toggle
 
 XF86AudioMicMute
 	pactl set-source-mute 1 toggle
