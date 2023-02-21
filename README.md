@@ -29,17 +29,13 @@ Polybar :
 ![Polybar](./.assets/polybar.png)
 
 
-Spotifyd dunst notif :
+Dunst notif :
 
-![SpotifyDNotif](./.assets/spotifyd-notif.png)
+![dunstNotif](./.assets/dunst_notif.png)
 
 Picom blur/neovim/neofetch :
 
 ![PicomNeovimNeofetch](./.assets/nvim_neofetch_picom_bspwm.png)
-
-Spotify-tui :
-
-![PicomNeovimNeofetch](./.assets/spt.png)
 
 BetterLockScreen :
 
