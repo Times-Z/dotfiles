@@ -1,17 +1,65 @@
-local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-local install_plugins = false
+local ensure_packer = function()
+    local fn = vim.fn
+    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+      fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+      vim.cmd [[packadd packer.nvim]]
+      return true
+    end
+    return false
+  end
 
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    print('Installing packer...')
-    local packer_url = 'https://github.com/wbthomason/packer.nvim'
-    vim.fn.system({'git', 'clone', '--depth', '1', packer_url, install_path})
-    print('Done.')
+local packer_bootstrap = ensure_packer()
+local packer = require('packer')
 
-    vim.cmd('packadd packer.nvim')
-    install_plugins = true
-end
+packer.init({
+    max_jobs = nil,
+      git = {
+        clone_timeout = 99999,
+    },
+    display = {
+        non_interactive = true
+    },
+    log = {
+        level = 'debug'
+    },
+})
 
-require('packer').startup(function(use)
+packer.startup(function(use)
+
+    use 'wbthomason/packer.nvim'
+
+    use 'nvim-tree/nvim-web-devicons'
+
+    use 'nathom/filetype.nvim'
+
+    use 'neovim/nvim-lspconfig'
+
+    use 'feline-nvim/feline.nvim'
+
+    use 'nvim-lualine/lualine.nvim'
+
+    use 'hrsh7th/nvim-cmp'
+
+    use 'hrsh7th/cmp-nvim-lsp'
+
+    use 'hrsh7th/cmp-nvim-lua'
+
+    use 'hrsh7th/cmp-buffer'
+
+    use 'octaltree/cmp-look'
+
+    use 'hrsh7th/cmp-path'
+
+    use 'hrsh7th/cmp-calc'
+
+    use 'f3fora/cmp-spell'
+
+    use 'hrsh7th/cmp-emoji'
+
+    use 'quangnguyen30192/cmp-nvim-ultisnips'
+
+    use 'onsails/lspkind-nvim'
 
     use {
         'kevinhwang91/rnvimr',
@@ -22,10 +70,16 @@ require('packer').startup(function(use)
 
     use {
         'glepnir/dashboard-nvim',
+        event = 'VimEnter',
         config = function()
-            require('plugins.config.dashboard')
-        end
-    }
+          require('dashboard').setup {
+            theme = require('plugins.config.dashboard').theme,
+            config = require('plugins.config.dashboard').config;
+            hide = require('plugins.config.dashboard').hide
+          }
+        end,
+        requires = {'nvim-tree/nvim-web-devicons'}
+      }
 
     use {
         'karb94/neoscroll.nvim',
@@ -35,7 +89,6 @@ require('packer').startup(function(use)
         end
     }
 
-    use {'nathom/filetype.nvim'}
 
     use {
         'terrortylor/nvim-comment',
@@ -81,42 +134,13 @@ require('packer').startup(function(use)
     }
 
     use {
-        'lukas-reineke/indent-blankline.nvim',
-        event = 'BufRead',
-        config = function()
-            require('indent_blankline').setup {require('plugins.config.indent_blankline')}
-        end
-    }
-
-    use 'wbthomason/packer.nvim'
-    use 'neovim/nvim-lspconfig'
-
-    use {
-        'kyazdani42/nvim-web-devicons',
-        config = function()
-            require('nvim-web-devicons').setup()
-        end
-    }
-
-    use {
         'catppuccin/nvim',
         as = 'catppuccin'
     }
 
     use {
         'akinsho/bufferline.nvim',
-        tag = "v2.*",
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
-
-    use 'feline-nvim/feline.nvim'
-
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = {
-            'kyazdani42/nvim-web-devicons',
-            opt = true
-        }
+        tag = "v2.*"
     }
 
     use {
@@ -124,34 +148,37 @@ require('packer').startup(function(use)
         cmd = 'CodeActionMenu'
     }
 
+
     use {
-        "hrsh7th/nvim-cmp",
-        requires = {"hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp", 'quangnguyen30192/cmp-nvim-ultisnips',
-                    'hrsh7th/cmp-nvim-lua', 'octaltree/cmp-look', 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc',
-                    'f3fora/cmp-spell', 'hrsh7th/cmp-emoji'}
+        'lukas-reineke/indent-blankline.nvim',
+        event = 'BufRead',
+        config = function()
+            require('indent_blankline').setup {
+                require('plugins.config.indent_blankline')
+            }
+        end
     }
 
-    use {'onsails/lspkind-nvim'}
-
-    if install_plugins then
-        require('packer').sync()
+    if packer_bootstrap then
+        packer.sync()
     end
 end)
 
-vim.opt.number = true
-vim.opt.mouse = 'a'
-vim.opt.termguicolors = true
-
--- Config
-require('plugins.config.theme')
-require('mapping')
-require('plugins.packer')
-require('plugins.lsp')
-require('plugins.cmp')
-
-require('bufferline').setup {}
-require('lualine').setup {
-    options = {
-        theme = "catppuccin"
+if packer_bootstrap == false then
+    vim.opt.number = true
+    vim.opt.mouse = 'a'
+    vim.opt.termguicolors = true
+    
+    -- Config
+    require('plugins.config.theme')
+    require('mapping')
+    require('plugins.lsp')
+    require('plugins.cmp')
+    
+    require('bufferline').setup {}
+    require('lualine').setup {
+        options = {
+            theme = "catppuccin"
+        }
     }
-}
+end
