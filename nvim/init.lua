@@ -19,10 +19,7 @@ packer.init({
     },
     display = {
         non_interactive = true
-    },
-    log = {
-        level = 'debug'
-    },
+    }
 })
 
 packer.startup(function(use)
