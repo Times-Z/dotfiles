@@ -3,6 +3,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
+
 vim.keymap.set('n', '<leader>w', '<cmd>write<cr>', {
     desc = 'Save'
 })
@@ -27,10 +29,11 @@ vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {
     desc = 'Telecope find file'
 })
 
-vim.keymap.set('n', '<leader>fn', '<cmd>DashboardNewFile<cr>', {
-    desc = 'New file'
-})
 vim.keymap.set('n', '<leader>m', '<cmd>CodeActionMenu<cr>', {
     desc = 'code action menu'
+})
+
+vim.keymap.set('n', '<leader>;', '<cmd>NvimTreeToggle<cr>', {
+    desc = 'Nvim tree toogle'
 })
 
