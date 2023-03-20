@@ -3,19 +3,11 @@
 pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/sxhkd/sxhkdrc &
 pgrep -x picom > /dev/null || picom -b --config ~/.config/picom/picom.conf &
 
-# Autostart applications
-
-bash ~/.config/polybar/launch.sh &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-dunst -config ~/.config/dunst/dunstrc &
-feh --bg-fill --no-screen-clip --no-xinerama ~/.config/wallpaper
-playerctld daemon &
-flameshot &
-slimbookbattery --minimize &
-
-# Bspwm config
-
-bspc monitor -d 1 2 3 4 5 6
+# setup virtual desktop
+# 1-5 main screen
+# Only one on second screen (6)
+bspc monitor DisplayPort-0 -d 1 2 3 4 5 6
+bspc monitor HDMI-A-0 -d 7 8 9 10
 
 bspc config border_width         3
 bspc config focused_border_color "#471d59"
@@ -30,14 +22,31 @@ bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 
 # Make teams open on second screen always
-bspc rule -a teams-for-linux desktop=6
 bspc rule -a yad-calendar state=floating
 
 # Focus any click
 bspc config click_to_focus any
 # Make cursor smooth
 # 1000/[refresh rate] to get value
-bspc config pointer_motion_interval 40
+bspc config pointer_motion_interval 10
+
+# Autostart applications
+#mpd
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+dunst -config ~/.config/dunst/dunstrc &
+feh --bg-fill --no-screen-clip --no-xinerama ~/.config/wallpaper
+playerctld daemon &
+bash ~/.config/polybar/launch.sh &
+flameshot &
+emote &
+/home/timesz/Documents/script/elgato_unstuck &
+
+#export PULSE_LATENCY_MSEC=60
+# reorder monitor to make 0 main
+# in this case virtual desktop 1 to 5 is only on main screen
+# and number 6 on second screen
+#bspc wm --reorder-monitors DisplayPort-0 DisplayPort-1
+#bspc config -m DisplayPort-1 bottom_padding 0
 
 # Autostart bluetooth
 if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]
@@ -46,4 +55,4 @@ then
 fi
 
 # notify good start
-dunstify --appname="bspwmrc" --urgency="LOW" "loaded at $(date +'%T')" -i /usr/share/icons/Tela-circle-black-dark/scalable/apps/cs-display.svg
+dunstify --appname="bspwmrc" --urgency="LOW" "BSPWM loaded at $(date +'%T')"
