@@ -33,6 +33,15 @@ ctrl + alt + q
 mod4 + w
 	bspc node -t {fullscreen, tiled}
 
+# Toggle floating
+mod4 + d
+	if [ -z "$(bspc query -N -n focused.floating)" ]; then \
+		bspc node focused -t floating; \
+	else \
+		bspc node focused -t tiled; \
+	fi
+
+#
 #
 # focus/swap
 #
