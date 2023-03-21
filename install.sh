@@ -1,25 +1,43 @@
 #!/bin/bash
 declare -A PACKAGES_MANAGER
+declare -A OS_PACKAGES
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 USER=$(whoami)
-PACKAGES=(
-  "bspwm"
-  "dunst"
-  "gpicview"
-  "kitty"
-  "neofetch"
-  "neovim"
-  "picom"
-  "polybar"
-  "ranger"
-  "rofi"
-  "sxhkd"
+PATH=$PATH:~.local/bin
+
+OS_PACKAGES=(
+  [pacman]="bspwm dunst gpicview git kitty neofetch neovim picom polybar ranger rofi sxhkd zsh"
+  [debian]="bspwm dunst gpicview git kitty neofetch neovim picom polybar ranger rofi sxhkd zsh"
 )
 PACKAGES_MANAGER=(
-  [yum]="/etc/redhat-release;yum install"
   [pacman]="/etc/arch-release;pacman -Syy"
-  [debian]="/etc/debian_version;apt install"
+  [debian]="/etc/debian_version;apt-get install -y"
+)
+NVIM_LSP_YARN_PACKAGES=(
+  "ansible-language-server"
+  "awk-language-server"
+  "bash-language-server"
+  "cssmodules-language-server"
+  "@cucumber/language-server"
+  "dockerfile-language-server-nodejs"
+  "emmet-ls"
+  "intelephense"
+  "yaml-language-server"
+  "vscode-langservers-extracted" 
+)
+NVIM_LSP_PYTHON_PACKAGES=(
+  "python-lsp-server"
+  "pyright"
+  "pyre-check"
+)
+FONTS=(
+  "https://github.com/adam7/delugia-code/releases/download/v2111.01.2/delugia-complete.zip"
+  "https://github.com/feathericons/feather/archive/refs/tags/v4.29.0.zip"
+  "https://github.com/googlefonts/noto-emoji/archive/refs/tags/v2.038.zip"
+  "https://github.com/FortAwesome/Font-Awesome/releases/download/6.3.0/fontawesome-free-6.3.0-web.zip"
+  "https://github.com/zavoloklom/material-design-iconic-font/releases/download/2.2.0/material-design-iconic-font.zip"
+  "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip"
 )
 
 function backup_config() {
@@ -32,7 +50,7 @@ function get_package_manager(){
   do
     if [[ -f $(echo ${PACKAGES_MANAGER[$os]} | cut -d ";" -f1) ]]
     then
-      PACKAGE_MANAGER=$os
+      OS=$os
       PACKAGE_MANAGER_INSTALL_PHRASE=$(echo ${PACKAGES_MANAGER[$os]} | cut -d ";" -f2)
       return 0
     fi
@@ -59,16 +77,103 @@ function config() {
   echo " => Done"
 }
 
-function install_package() {
-  packages=${PACKAGES[@]}
+function install_node_packages() {
+  packages=${NVIM_LSP_YARN_PACKAGES[@]}
   get_package_manager
-  read -p "Do you want to insall ($packages) with $PACKAGE_MANAGER ? [y/n] " -n 1 -r
+
+  read -p "Do you want to insall ($packages) with yarn ? [y/n] " -n 1 -r
   echo
   if [[ ! "$REPLY" =~ ^([Yy]| )$ ]]
   then
     [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 
   fi
-  $(sudo $PACKAGE_MANAGER_INSTALL_PHRASE $packages)
+
+  if [[ -z $(which yarn) ]]
+  then
+
+    if [ $OS == "debian" ]
+    then
+      if [[ -z $(which nodejs) ]]
+      then
+        curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+        sudo $PACKAGE_MANAGER_INSTALL_PHRASE nodejs
+        sudo npm install -g yarn
+      fi
+    else
+      sudo $PACKAGE_MANAGER_INSTALL_PHRASE yarn
+    fi
+
+    echo
+  fi
+
+  echo
+  yarn global add node-gyp
+  echo
+  yarn global add $packages
+  echo
+}
+
+function install_python_packages() {
+  packages=${NVIM_LSP_PYTHON_PACKAGES[@]}
+  get_package_manager
+
+  read -p "Do you want to install ($packages) with pip ? [y/n]" -n 1 -r
+  echo
+  if [[ ! "$REPLY" =~ ^([Yy]| )$ ]]
+  then
+    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 
+  fi
+
+  if [[ -z $(which pip) ]]
+  then
+    if [ $OS == "debian" ]
+    then
+      pip_package="python3-pip"
+    else
+      pip_package="python-pip"
+    fi
+
+    sudo $PACKAGE_MANAGER_INSTALL_PHRASE $pip_package
+    echo
+  fi
+
+  python3 -m pip install $packages
+  echo
+}
+
+function install_os_packages() {
+  get_package_manager
+  packages=${OS_PACKAGES[$OS]}
+
+  read -p "Do you want to insall ($packages) ? [y/n] " -n 1 -r
+  echo
+  if [[ ! "$REPLY" =~ ^([Yy]| )$ ]]
+  then
+    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 
+  fi
+
+  sudo $PACKAGE_MANAGER_INSTALL_PHRASE curl make gcc g++ 
+  sudo $PACKAGE_MANAGER_INSTALL_PHRASE $packages
+  echo
+  RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+}
+
+function install_fonts() {
+  mkdir /tmp/ttf
+  mkdir -p ~/.local/share/fonts
+
+  for font_url in ${FONTS[@]}
+  do
+    archive_name=$(echo $font_url | rev | cut -d"/" -f1 | rev)
+    echo $font_url
+    curl -L -o /tmp/$archive_name $font_url
+    unzip /tmp/$archive_name "*.ttf" -d /tmp/ttf
+  done
+
+  cp -R /tmp/ttf ~/.local/share/fonts
+  rm -r /tmp/ttf
+  rm /tmp/*.zip
+  fc-cache -f -v
 }
 
 function install_configuration() {
@@ -98,4 +203,8 @@ function install_configuration() {
 }
 
 install_configuration
-install_package
+install_os_packages
+install_node_packages
+install_python_packages
+install_fonts
+
