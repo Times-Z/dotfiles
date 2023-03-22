@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ln -sf $PWD/$1 ~/.config/wallpaper
+
+feh --bg-fill --no-screen-clip --no-xinerama ~/.config/wallpaper

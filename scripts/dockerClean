@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Cleaning docker ..."
+
+before=$(docker system df | grep Images)
+images=$(docker images -f "dangling=true" -q)
+docker rmi -f $images
+after=$(docker system df | grep Images)
+
+echo ""
+echo "Before cleaning : "
+echo $before
+
+echo "After cleaning : "
+echo $after
+
+echo "Done."
+
+

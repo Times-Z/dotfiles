@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+maxNumber=20
+
+for (( i=0; i< $maxNumber; i++ ))
+do
+    arr[0]="CRITICAL"
+    arr[1]="LOW"
+    arr[2]="NORMAL"
+    
+    rand=$[ $RANDOM % 3 ]
+
+    msg=$(lorem-ipsum-generator -p 1 -s 1 --sentence-mean=1 --paragraph-mean=1)
+
+    dunstify --urgency=${arr[$rand]} --appname="generate_test" "$msg $(date +'%T')" -i ~/Pictures/icon/linux.png 
+done

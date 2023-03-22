@@ -1,11 +1,16 @@
 #!/bin/bash
+
 declare -A PACKAGES_MANAGER
 declare -A OS_PACKAGES
+declare -A SHELL_FILE
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 USER=$(whoami)
-PATH=$PATH:~.local/bin
 
+SHELL_FILE=(
+  [zsh]=~/.zshrc
+  [bash]=~/.bashrc
+)
 OS_PACKAGES=(
   [pacman]="bspwm dunst gpicview git kitty neofetch neovim picom polybar ranger rofi sxhkd zsh"
   [debian]="bspwm dunst gpicview git kitty neofetch neovim picom polybar ranger rofi sxhkd zsh"
@@ -33,12 +38,18 @@ NVIM_LSP_PYTHON_PACKAGES=(
 )
 FONTS=(
   "https://github.com/adam7/delugia-code/releases/download/v2111.01.2/delugia-complete.zip"
-  "https://github.com/feathericons/feather/archive/refs/tags/v4.29.0.zip"
   "https://github.com/googlefonts/noto-emoji/archive/refs/tags/v2.038.zip"
   "https://github.com/FortAwesome/Font-Awesome/releases/download/6.3.0/fontawesome-free-6.3.0-web.zip"
   "https://github.com/zavoloklom/material-design-iconic-font/releases/download/2.2.0/material-design-iconic-font.zip"
   "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip"
 )
+
+function install_path(){
+  mkdir -p ~/{.local,.local/bin}
+  PATH=$PATH:~/.local/bin
+  file=${SHELL_FILE[$(echo $SHELL | rev | cut -d'/' -f1 | rev)]}
+  echo 'PATH="${PATH}:~/.local/bin"; export PATH;' >> $file
+}
 
 function backup_config() {
   echo "=> Backup $1 configuration"
@@ -154,8 +165,8 @@ function install_os_packages() {
 
   sudo $PACKAGE_MANAGER_INSTALL_PHRASE curl make gcc g++ 
   sudo $PACKAGE_MANAGER_INSTALL_PHRASE $packages
-  echo
   RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  echo
 }
 
 function install_fonts() {
@@ -169,6 +180,8 @@ function install_fonts() {
     curl -L -o /tmp/$archive_name $font_url
     unzip /tmp/$archive_name "*.ttf" -d /tmp/ttf
   done
+
+  curl -o /tmp/ttf/icomoon-feather.ttf https://github.com/khanhas/dotfiles/raw/master/polybar/fonts/icomoon-feather.ttf
 
   cp -R /tmp/ttf ~/.local/share/fonts
   rm -r /tmp/ttf
@@ -198,10 +211,13 @@ function install_configuration() {
   config --file .zprofile ~/.zprofile
   config --file betterlockscreenrc ~/.config/betterlockscreenrc
 
+  cp $SCRIPT_DIR/scripts/* ~/.local/bin
+  
   echo "All done"
   echo "----------------------"
 }
 
+install_path
 install_configuration
 install_os_packages
 install_node_packages
