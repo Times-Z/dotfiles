@@ -51,11 +51,6 @@ function install_path(){
   echo 'PATH="${PATH}:~/.local/bin"; export PATH;' >> $file
 }
 
-function backup_config() {
-  echo "=> Backup $1 configuration"
-  cp -R $1 $1.bck
-}
-
 function get_package_manager(){
   for os in ${!PACKAGES_MANAGER[@]}
   do
@@ -69,23 +64,25 @@ function get_package_manager(){
 }
 
 function config() {
-    backup_config $3
-    echo " => Installing $2 configuration"
-    case $1 in       
-      "--dir")
-        mkdir -p $3
-        cp -R $SCRIPT_DIR/$2/* $3/
-      ;;
-      "--file")
-        cp $SCRIPT_DIR/$2 $3
-      ;;
-      *)
-        echo "Bad option"
-        exit 1
-      ;;
-    esac
+  if [ -d $3 ]
+  then
+    cp -R $3 $3.bck
+  fi
+
+  case $1 in       
+    "--dir")
+      mkdir -p $3
+      cp -R $SCRIPT_DIR/$2/* $3/
+    ;;
+    "--file")
+      cp $SCRIPT_DIR/$2 $3
+    ;;
+    *)
+      echo "Bad option"
+      exit 1
+    ;;
+  esac
   chown -R $USER $2
-  echo " => Done"
 }
 
 function install_node_packages() {
@@ -189,9 +186,7 @@ function install_fonts() {
   fc-cache -f -v
 }
 
-function install_configuration() {
-  echo "----------------------"
-  echo "Starting configuration"
+function install_config_files() {
   config --dir bspwm ~/.config/bspwm
   config --dir dunst ~/.config/dunst
   config --dir gpicview ~/.config/gpicview
@@ -212,13 +207,10 @@ function install_configuration() {
   config --file betterlockscreenrc ~/.config/betterlockscreenrc
 
   cp $SCRIPT_DIR/scripts/* ~/.local/bin
-  
-  echo "All done"
-  echo "----------------------"
 }
 
 install_path
-install_configuration
+install_config_files
 install_os_packages
 install_node_packages
 install_python_packages
