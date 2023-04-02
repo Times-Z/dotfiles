@@ -37,6 +37,6 @@ case "$1" in
         --title="yad-calendar" --borders=0 >/dev/null &
     ;;
     *)
-        echo "%{F#883696}%{F-} $DATE"
+        echo "$DATE"
     ;;
 esac

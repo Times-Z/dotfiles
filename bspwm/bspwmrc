@@ -1,4 +1,6 @@
 #! /bin/sh
+MAIN_MONITOR=$(xrandr | grep primary | awk '{print $1}')
+SECOND_MONITOR=$(xrandr | grep connected | awk '{i++}i==2'| awk '{print $1}')
 
 pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/sxhkd/sxhkdrc &
 pgrep -x picom > /dev/null || picom -b --config ~/.config/picom/picom.conf &
@@ -6,8 +8,8 @@ pgrep -x picom > /dev/null || picom -b --config ~/.config/picom/picom.conf &
 # setup virtual desktop
 # 1-5 main screen
 # Only one on second screen (6)
-bspc monitor DisplayPort-0 -d 1 2 3 4 5 6
-bspc monitor HDMI-A-0 -d 7 8 9 10
+bspc monitor ${MAIN_MONITOR} -d 1 2 3 4 5 6
+# bspc monitor ${SECOND_MONITOR} -d 7 8 9 10
 
 bspc config border_width         3
 bspc config focused_border_color "#471d59"
@@ -31,14 +33,13 @@ bspc config click_to_focus any
 bspc config pointer_motion_interval 10
 
 # Autostart applications
-#mpd
+bash ~/.config/polybar/launch.sh &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 dunst -config ~/.config/dunst/dunstrc &
 feh --bg-fill --no-screen-clip --no-xinerama ~/.config/wallpaper
-playerctld daemon &
-bash ~/.config/polybar/launch.sh &
-flameshot &
-emote &
+pgrep -x pplayerctld > /dev/null || playerctld daemon &
+pgrep -x flameshot > /dev/null || flameshot &
+pgrep -x emote > /dev/null || emote &
 /home/timesz/Documents/script/elgato_unstuck &
 
 #export PULSE_LATENCY_MSEC=60
