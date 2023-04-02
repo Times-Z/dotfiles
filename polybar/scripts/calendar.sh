@@ -30,13 +30,13 @@ case "$1" in
         else #Top
             : $((pos_y = BAR_HEIGHT + BORDER_SIZE))
         fi
-        
+
         LC_TIME="fr_FR.UTF-8" yad --calendar --undecorated --fixed --close-on-unfocus --no-buttons \
-        --width="$YAD_WIDTH" --height="$YAD_HEIGHT" --posx="2900" --posy="30" \
+        --width="$YAD_WIDTH" --height="$YAD_HEIGHT" --posx="$pos_x" --posy="$pos_y" \
         
         --title="yad-calendar" --borders=0 >/dev/null &
     ;;
     *)
-        echo "$DATE"
+        echo "%{F#883696}%{F-} $DATE"
     ;;
 esac

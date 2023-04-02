@@ -38,14 +38,10 @@ NVIM_LSP_PYTHON_PACKAGES=(
 )
 FONTS=(
   "https://github.com/adam7/delugia-code/releases/download/v2111.01.2/delugia-complete.zip"
-  "https://github.com/googlefonts/noto-emoji/archive/refs/tags/v2.038.zip"
-  "https://github.com/FortAwesome/Font-Awesome/releases/download/6.3.0/fontawesome-free-6.3.0-web.zip"
-  "https://github.com/zavoloklom/material-design-iconic-font/releases/download/2.2.0/material-design-iconic-font.zip"
-  "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip"
 )
 
 function install_path(){
-  mkdir -p ~/{.local,.local/bin}
+  mkdir -p ~/{.local,.local/bin,.local/share,.local/share/fonts}
   PATH=$PATH:~/.local/bin
   file=${SHELL_FILE[$(echo $SHELL | rev | cut -d'/' -f1 | rev)]}
   echo 'PATH="${PATH}:~/.local/bin"; export PATH;' >> $file
@@ -207,6 +203,7 @@ function install_config_files() {
   config --file betterlockscreenrc ~/.config/betterlockscreenrc
 
   cp $SCRIPT_DIR/scripts/* ~/.local/bin
+  cp $SCRIPT_DIR/fonts/* ~/.local/share/fonts
 }
 
 install_path
