@@ -23,15 +23,15 @@ BAT_LEVEL=$(cat "$BAT_PATH/capacity")
 
 if [ $BAT_LEVEL -lt $LOW_BAT ]
 then
-	if [ $ALREADY_NOTIFY = false ]
-	then
-		echo "yes" > $BAT_STATUS
-		dunstify --appname="battery" "Battery low" --urgency="critical" -i $ICON_PATH
-		paplay $NOTIFICATION_SOUND 
-	fi
+    if [ $ALREADY_NOTIFY = false ]
+    then
+        echo "yes" > $BAT_STATUS
+        dunstify --appname="battery" "Battery low" --urgency="critical" -i $ICON_PATH
+        paplay $NOTIFICATION_SOUND
+    fi
 else
-	if [ $ALREADY_NOTIFY = true ]
-	then
-		echo "no" > $BAT_STATUS
-	fi
+    if [ $ALREADY_NOTIFY = true ]
+    then
+        echo "no" > $BAT_STATUS
+    fi
 fi

@@ -4,7 +4,6 @@ readonly COMMAND=$1
 readonly DEVICE=$2
 readonly ICON=$3
 
-
 readonly HIGH_POWER=51
 readonly MID_POWER=50
 readonly LOW_POWER=20
