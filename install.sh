@@ -12,8 +12,8 @@ SHELL_FILE=(
   [bash]=~/.bashrc
 )
 OS_PACKAGES=(
-  [pacman]="bspwm dunst gpicview git kitty neofetch neovim picom polybar ranger rofi sxhkd zsh"
-  [debian]="bspwm dunst gpicview git kitty neofetch neovim picom polybar ranger rofi sxhkd zsh"
+  [pacman]="bspwm dunst exa gpicview git kitty neofetch neovim picom polybar ranger rofi sxhkd zsh"
+  [debian]="bspwm dunst exa gpicview git kitty neofetch neovim picom polybar ranger rofi sxhkd zsh"
 )
 PACKAGES_MANAGER=(
   [pacman]="/etc/arch-release;pacman -Syy"
@@ -65,7 +65,7 @@ function config() {
     cp -R $3 $3.bck
   fi
 
-  case $1 in       
+  case $1 in
     "--dir")
       mkdir -p $3
       cp -R $SCRIPT_DIR/$2/* $3/
@@ -158,7 +158,9 @@ function install_os_packages() {
 
   sudo $PACKAGE_MANAGER_INSTALL_PHRASE curl make gcc g++ 
   sudo $PACKAGE_MANAGER_INSTALL_PHRASE $packages
-  RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  current_path=$(pwd)
+  cd ~ && RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  cd $current_path
   echo
 }
 
@@ -207,9 +209,9 @@ function install_config_files() {
 }
 
 install_path
-install_config_files
 install_os_packages
 install_node_packages
 install_python_packages
 install_fonts
+install_config_files
 
