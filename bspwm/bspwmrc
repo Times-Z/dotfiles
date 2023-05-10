@@ -9,7 +9,7 @@ pgrep -x picom > /dev/null || picom -b --config ~/.config/picom/picom.conf &
 # 1-5 main screen
 # Only one on second screen (6)
 bspc monitor ${MAIN_MONITOR} -d 1 2 3 4 5 6
-# bspc monitor ${SECOND_MONITOR} -d 7 8 9 10
+# bspc monitor HDMI-A-0 -d 7 8 9 10
 
 bspc config border_width         3
 bspc config focused_border_color "#471d59"
@@ -33,21 +33,13 @@ bspc config click_to_focus any
 bspc config pointer_motion_interval 10
 
 # Autostart applications
-bash ~/.config/polybar/launch.sh &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-dunst -config ~/.config/dunst/dunstrc &
+pgrep -x dunst > /dev/null || dunst -config ~/.config/dunst/dunstrc &
 feh --bg-fill --no-screen-clip --no-xinerama ~/.config/wallpaper
-pgrep -x pplayerctld > /dev/null || playerctld daemon &
+pgrep -x playerctld > /dev/null || playerctld daemon &
+bash ~/.config/polybar/launch.sh &
 pgrep -x flameshot > /dev/null || flameshot &
 pgrep -x emote > /dev/null || emote &
-/home/timesz/Documents/script/elgato_unstuck &
-
-#export PULSE_LATENCY_MSEC=60
-# reorder monitor to make 0 main
-# in this case virtual desktop 1 to 5 is only on main screen
-# and number 6 on second screen
-#bspc wm --reorder-monitors DisplayPort-0 DisplayPort-1
-#bspc config -m DisplayPort-1 bottom_padding 0
 
 # Autostart bluetooth
 if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]
