@@ -242,6 +242,12 @@ function install_os_packages {
     ./install-i3lock-color.sh
 
   else
+    sudo $PACKAGE_MANAGER_INSTALL_PHRASE --needed git base-devel 
+    cd /tmp
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+
     yay -S pokemon-colorscripts-git
     yay -S betterlockscreen
   fi
