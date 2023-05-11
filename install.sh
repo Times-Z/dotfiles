@@ -269,3 +269,5 @@ install_python_packages
 install_fonts
 install_config_files
 
+curl -Lo ~/Pictures/wallpaper.png https://lh3.googleusercontent.com/u/0/drive-viewer/AFGJ81pkL30f1wyCsEgmk6G9dGUQ9xyIIu5W_hhfQQhNOufbZMtoELupCCuzEhwvasKuKemvS8qDnHPoTt5DTqU-SZ_OelaE=w1835-h1275
+~/.local/bin/wallpaper ~/Pictures/wallpaper.png
