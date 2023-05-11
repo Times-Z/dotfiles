@@ -8,8 +8,8 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 USER=$(whoami)
 
 SHELL_FILE=(
-  [zsh]=~/.zshrc
-  [bash]=~/.bashrc
+  [zsh]=$HOME/.zshrc
+  [bash]=$HOME/.bashrc
 )
 OS_PACKAGES=(
   [arch]="bspwm curl dunst exa feh gpicview git kitty neofetch neovim picom polybar ranger rofi sxhkd yad zsh"
@@ -44,6 +44,7 @@ function install_path {
   mkdir -p ~/{.local,.local/bin,.local/share,.local/share/fonts}
   PATH=$PATH:~/.local/bin
   file=${SHELL_FILE[$(echo $SHELL | rev | cut -d'/' -f1 | rev)]}
+  export PATH
   echo 'PATH="${PATH}:~/.local/bin"; export PATH;' >> $file
 }
 
@@ -172,7 +173,11 @@ function install_os_packages {
     sudo mv nvim.appimage /usr/bin/nvim
 
     # picom install latest version from sources
-    sudo $PACKAGE_MANAGER_INSTALL_PHRASE libxext-dev \
+    sudo $PACKAGE_MANAGER_INSTALL_PHRASE autoconf \
+      gcc \
+      make \
+      pkg-config \
+      libxext-dev \
       libxcb1-dev \
       libxcb-damage0-dev \
       libxcb-dpms0-dev \
@@ -195,8 +200,18 @@ function install_os_packages {
       uthash-dev \
       libev-dev \
       libx11-xcb-dev \
+      libpam0g-dev \
+      libcairo2-dev \
+      libfontconfig1-dev \
+      libxcb-xkb-dev \
+      libxcb-xinerama0-dev \
+      libxcb-util-dev \
+      libxcb-xrm-dev \
+      libxkbcommon-dev \
+      libxkbcommon-x11-dev \
+      libjpeg-dev \
       meson
-    
+
     cd /tmp
     git clone https://github.com/yshui/picom.git
     cd picom
@@ -210,8 +225,25 @@ function install_os_packages {
     git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git
     cd pokemon-colorscripts
     sudo ./install.sh
+
+    # Install betterlockscreen & i3lock color
+    cd /tmp
+    wget https://github.com/betterlockscreen/betterlockscreen/archive/refs/heads/main.zip
+    unzip main.zip
+    cd betterlockscreen-main/
+    chmod u+x betterlockscreen
+    sudo cp betterlockscreen /usr/local/bin/
+    sudo cp system/betterlockscreen@.service /usr/lib/systemd/system/
+    systemctl enable betterlockscreen@$USER
+
+    cd /tmp
+    git clone https://github.com/Raymo111/i3lock-color.git
+    cd i3lock-color
+    ./install-i3lock-color.sh
+
   else
     yay -S pokemon-colorscripts-git
+    yay -S betterlockscreen
   fi
 
   cd $current_path
@@ -270,4 +302,15 @@ install_fonts
 install_config_files
 
 curl -Lo ~/Pictures/wallpaper.png https://lh3.googleusercontent.com/u/0/drive-viewer/AFGJ81pkL30f1wyCsEgmk6G9dGUQ9xyIIu5W_hhfQQhNOufbZMtoELupCCuzEhwvasKuKemvS8qDnHPoTt5DTqU-SZ_OelaE=w1835-h1275
-~/.local/bin/wallpaper ~/Pictures/wallpaper.png
+cd ~/Pictures && wallpaper wallpaper.png
+betterlockscreen -u ~/Pictures/wallpaper.png
+
+echo
+echo
+echo
+read -p "Do you want to reboot ? [y/n] " -n 1 -r
+echo
+if [[ "$REPLY" =~ ^([Yy]| )$ ]]
+then
+  reboot
+fi
