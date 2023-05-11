@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 readonly CMD=$1
 
@@ -8,7 +8,7 @@ readonly ICON_OFF=""
 readonly COLOR_ON="%{F#61C766}"
 readonly ICON_ON=""
 
-function show_icon() {
+function show_icon {
     openvpn=$(pgrep -a openvpn | head -n 1 | awk '{print $NF }' | rev | cut -d '/' -f 1 | rev)
     openfortivpn=$(pgrep -a openfortivpn | head -n 1 | awk '{print $NF }' | rev | cut -d '/' -f 1 | rev)
     
@@ -32,7 +32,7 @@ function kill_vpn_gui {
     exval=$?
 }
 
-function toggle() {
+function toggle {
 
     openvpn=$(pgrep -a openvpn)
     openfortivpn=$(pgrep -a openfortivpn)

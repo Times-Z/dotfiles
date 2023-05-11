@@ -8,7 +8,7 @@ readonly HIGH_POWER=51
 readonly MID_POWER=50
 readonly LOW_POWER=20
 
-function show_icon() {
+function show_icon {
     POWER=$(upower -d | awk "/${1}/" RS= | grep percentage | cut -d':' -f2 | xargs | cut -d'%' -f1)
 
     if [ $POWER -ge $HIGH_POWER ] ;
@@ -23,7 +23,7 @@ function show_icon() {
     fi
 }
 
-function is_device_connected() {
+function is_device_connected {
     upower -d | awk "/${1}/" | grep .
 }
 

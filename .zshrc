@@ -1,10 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH="$PATH:$GEM_HOME/bin"
-#export PATH=$HOME/bin:/usr/local/bin:$PATH
+PATH="$HOME/.config/rofi/bin:$HOME/.config/composer/vendor/bin:$HOME/Documents/scripts:$HOME/.local/bin:$HOME/.yarn/bin:$HOME/perl5/bin${PATH:+:${PATH}}"
+export PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -86,17 +85,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-PATH="$HOME/.config/rofi/bin:$HOME/.config/composer/vendor/bin:$HOME/Documents/scripts:$HOME/.local/bin:$HOME/.yarn/bin:$HOME/perl5/bin${PATH:+:${PATH}}"
-
-export PATH
 export LANG=en_US.UTF-8
 export EDITOR="nvim"
-#export PAGER="nvim"
-#export PROJECT="/mnt/DATA_ENCRYPTED/mc/"
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
