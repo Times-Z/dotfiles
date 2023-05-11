@@ -12,11 +12,11 @@ SHELL_FILE=(
   [bash]=~/.bashrc
 )
 OS_PACKAGES=(
-  [pacman]="bspwm dunst exa gpicview git kitty neofetch neovim picom polybar ranger rofi sxhkd zsh"
-  [debian]="bspwm dunst exa gpicview git kitty neofetch neovim picom polybar ranger rofi sxhkd zsh"
+  [arch]="bspwm curl dunst exa feh gpicview git kitty neofetch neovim picom polybar ranger rofi sxhkd yad zsh"
+  [debian]="bspwm curl dunst exa feh fuse gpicview git kitty neofetch polybar ranger rofi sxhkd yad zsh"
 )
 PACKAGES_MANAGER=(
-  [pacman]="/etc/arch-release;pacman -Syy"
+  [arch]="/etc/arch-release;pacman -Syy"
   [debian]="/etc/debian_version;apt-get install -y"
 )
 NVIM_LSP_YARN_PACKAGES=(
@@ -40,14 +40,14 @@ FONTS=(
   "https://github.com/adam7/delugia-code/releases/download/v2111.01.2/delugia-complete.zip"
 )
 
-function install_path(){
+function install_path {
   mkdir -p ~/{.local,.local/bin,.local/share,.local/share/fonts}
   PATH=$PATH:~/.local/bin
   file=${SHELL_FILE[$(echo $SHELL | rev | cut -d'/' -f1 | rev)]}
   echo 'PATH="${PATH}:~/.local/bin"; export PATH;' >> $file
 }
 
-function get_package_manager(){
+function get_package_manager {
   for os in ${!PACKAGES_MANAGER[@]}
   do
     if [[ -f $(echo ${PACKAGES_MANAGER[$os]} | cut -d ";" -f1) ]]
@@ -59,7 +59,7 @@ function get_package_manager(){
   done
 }
 
-function config() {
+function config {
   if [ -d $3 ]
   then
     cp -R $3 $3.bck
@@ -81,7 +81,7 @@ function config() {
   chown -R $USER $2
 }
 
-function install_node_packages() {
+function install_node_packages {
   packages=${NVIM_LSP_YARN_PACKAGES[@]}
   get_package_manager
 
@@ -117,7 +117,7 @@ function install_node_packages() {
   echo
 }
 
-function install_python_packages() {
+function install_python_packages {
   packages=${NVIM_LSP_PYTHON_PACKAGES[@]}
   get_package_manager
 
@@ -145,7 +145,7 @@ function install_python_packages() {
   echo
 }
 
-function install_os_packages() {
+function install_os_packages {
   get_package_manager
   packages=${OS_PACKAGES[$OS]}
 
@@ -160,11 +160,65 @@ function install_os_packages() {
   sudo $PACKAGE_MANAGER_INSTALL_PHRASE $packages
   current_path=$(pwd)
   cd ~ && RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  
+
+  if [ "$(cat /etc/os-release | grep deb)" != "" ]
+  then
+    # force install neovim 0.9 on debian based distro
+    curl -LO https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage
+    chmod u+x nvim.appimage
+    sudo mv nvim.appimage /usr/bin/nvim
+
+    # picom install latest version from sources
+    sudo $PACKAGE_MANAGER_INSTALL_PHRASE libxext-dev \
+      libxcb1-dev \
+      libxcb-damage0-dev \
+      libxcb-dpms0-dev \
+      libxcb-xfixes0-dev \
+      libxcb-shape0-dev \
+      libxcb-render-util0-dev \
+      libxcb-render0-dev \
+      libxcb-randr0-dev \
+      libxcb-composite0-dev \
+      libxcb-image0-dev \
+      libxcb-present-dev \
+      libxcb-glx0-dev \
+      libpixman-1-dev \
+      libdbus-1-dev \
+      libconfig-dev \
+      libgl-dev \
+      libegl-dev \
+      libpcre2-dev \
+      libevdev-dev \
+      uthash-dev \
+      libev-dev \
+      libx11-xcb-dev \
+      meson
+    
+    cd /tmp
+    git clone https://github.com/yshui/picom.git
+    cd picom
+    git submodule update --init --recursive
+    meson setup --buildtype=release . build
+    ninja -C build
+    sudo ninja -C build install
+
+    # install pokemon color script
+    cd /tmp
+    git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git
+    cd pokemon-colorscripts
+    sudo ./install.sh
+  else
+    yay -S pokemon-colorscripts-git
+  fi
+
   cd $current_path
   echo
 }
 
-function install_fonts() {
+function install_fonts {
   mkdir /tmp/ttf
   mkdir -p ~/.local/share/fonts
 
@@ -184,7 +238,7 @@ function install_fonts() {
   fc-cache -f -v
 }
 
-function install_config_files() {
+function install_config_files {
   config --dir bspwm ~/.config/bspwm
   config --dir dunst ~/.config/dunst
   config --dir gpicview ~/.config/gpicview

@@ -9,7 +9,7 @@ do
   sleep 0.1
 done
 
-if [ ! -z "$LAPTOP" ] ;
+if [ "$LAPTOP" == "true" ] ;
 then
     polybar -q main-laptop -c "$DIR/config.ini" &
 else

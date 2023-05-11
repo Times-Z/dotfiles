@@ -18,7 +18,7 @@ readonly ZSCROLL_UPDATE_DELAY="2"
 # if display text > length the text is going to scroll
 readonly ZSCROLL_LENGTH="20"
 
-function get_status() {
+function get_status {
     PLAYERCTL_STATUS=$(playerctl --player=$PLAYER status)
     EXIT_CODE=$?
     
@@ -29,12 +29,12 @@ function get_status() {
     fi
 }
 
-function get_metadata() {
+function get_metadata {
     DATA=$(playerctl --player=$PLAYER metadata --format "$1")
     echo $DATA
 }
 
-function display_data() {
+function display_data {
     if [ "$STATUS" = "Stopped" ]; then
         echo " "
     elif [ "$STATUS" = "Paused"  ]; then
@@ -46,7 +46,7 @@ function display_data() {
     fi
 }
 
-function display_status() {
+function display_status {
     if [ "$STATUS" = "Stopped" ]; then
         echo ""
     elif [ "$STATUS" = "Paused"  ]; then
@@ -58,7 +58,7 @@ function display_status() {
     fi
 }
 
-function exec_player_command() {
+function exec_player_command {
     readonly CMD=$1
     playerctl --player=$PLAYER $CMD
 }

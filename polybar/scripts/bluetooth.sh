@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 readonly CMD=$1
 
@@ -9,7 +9,7 @@ readonly ICON_ON=""
 readonly COLOR_CONNECTED="%{F#883696}"
 readonly ICON_CONNECTED=""
 
-function show_icon() {
+function show_icon {
     if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]
     then
         echo $COLOR_OFF$ICON_OFF
@@ -23,7 +23,7 @@ function show_icon() {
     fi
 }
 
-function toggle() {
+function toggle {
     if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]
     then
         bluetoothctl power on
