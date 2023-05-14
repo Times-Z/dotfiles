@@ -51,6 +51,7 @@ pgrep -x playerctld > /dev/null || playerctld daemon &
 bash ~/.config/polybar/launch.sh &
 pgrep -x flameshot > /dev/null || flameshot &
 pgrep -x emote > /dev/null || emote &
+pgrep -x greenclip > /dev/null || greenclip daemon &
 
 # Autostart bluetooth
 if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]

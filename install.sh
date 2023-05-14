@@ -241,6 +241,11 @@ function install_os_packages {
     cd i3lock-color
     ./install-i3lock-color.sh
 
+    cd /tmp
+    wget https://github.com/erebe/greenclip/releases/download/v4.2/greenclip
+    chmod +x greenclip
+    sudo mv greenclip /usr/bin/greenclip
+
   else
     sudo $PACKAGE_MANAGER_INSTALL_PHRASE --needed git base-devel 
     cd /tmp
@@ -248,8 +253,9 @@ function install_os_packages {
     cd yay
     makepkg -si
 
-    yay -S pokemon-colorscripts-git
-    yay -S betterlockscreen
+    yay -S betterlockscreen \
+      pokemon-colorscripts-git \
+      rofi-greenclip
   fi
 
   cd $current_path
@@ -295,6 +301,7 @@ function install_config_files {
   config --file .xinitrc ~/.xinitrc
   config --file .zprofile ~/.zprofile
   config --file betterlockscreenrc ~/.config/betterlockscreenrc
+  config --file greenclip.toml ~/.config/greenclip.toml
 
   cp $SCRIPT_DIR/scripts/* ~/.local/bin
   cp $SCRIPT_DIR/fonts/* ~/.local/share/fonts
