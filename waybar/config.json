@@ -54,7 +54,7 @@
       "urgent": "",
       "default": ""
     },
-    "persistent_workspaces": {
+    "persistent-workspaces": {
       "*": 6
     }
   },
