@@ -1,0 +1,75 @@
+@import url('colors.css');
+
+/* General */
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: Delugia TimeszFont;
+  font-size: 14px;
+  font-style: normal;
+  min-height: 0;
+}
+
+/* Bar */
+window#waybar {
+  background: rgba(30, 30, 46, 0.2);
+  color: @main;
+}
+
+/* All widget same size */
+#custom-powermenu,
+#workspaces,
+#cpu,
+#memory,
+#window,
+#network,
+#bluetooth,
+#battery,
+#wireplumber,
+#clock,
+#tray {
+  margin: 5px;
+  padding: 5px 10px 5px 10px;
+  background: rgba(40, 40, 40, 0.8);
+  border-radius: 10px;
+}
+
+#window {
+  color: @foreground;
+}
+
+#custom-powermenu:hover {
+  color: @active;
+  border-radius: 12px;
+}
+
+#workspaces button {
+  padding: 0px 5px;
+  color: @secondary;
+}
+
+#workspaces button.active {
+  color: @main;
+}
+
+#workspaces button:hover {
+  color: @hover;
+  border-radius: 12px;
+}
+
+#bluetooth.off {
+  color: @secondary;
+}
+
+#wireplumber.muted {
+  color: #EC7875;
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 1);
+  border: 1px solid rgba(100, 114, 125, 1);
+  border-radius: 12px;
+}
+tooltip label {
+  color: @foreground;
+}
