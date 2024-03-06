@@ -296,6 +296,7 @@ function install_config_files {
   config --dir spotify-tui ~/.config/spotify-tui
   config --dir spotifyd ~/.config/spotifyd
   config --dir sxhkd ~/.config/sxhkd
+  config --dir pipewire ~/.config/pipewire
 
   config --file .zshrc ~/.zshrc
   config --file .xinitrc ~/.xinitrc
