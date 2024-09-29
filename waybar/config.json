@@ -97,8 +97,8 @@
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click-right": "~/.config/polybar/scripts/bluetooth.sh --toggle",
-    "on-click-left": ""
+    "on-click-left": "~/.config/polybar/scripts/bluetooth.sh --toggle",
+    "on-click-right": "/sbin/overskride"
   },
   "tray": {
     "icon-size": 18,
@@ -121,7 +121,7 @@
   "custom/powermenu": {
     "format": "",
     "tooltip": false,
-    "on-click": "~/.config/rofi/powermenu/powermenu.sh"
+    "on-click": "~/.config/rofi/bin/powermenu"
   },
   "cava": {
     "framerate": 30,
