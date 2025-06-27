@@ -1,45 +1,39 @@
 # Dotfiles
 
-My personal backup dotfiles
+Personal configuration for my Arch Linux environment.
 
-⚠️ Wallpaper not included ⚠️
+## System Overview
 
-## Config contents
-- Bspwm (+ .xinitrc/.zprofile)
+- **OS:** Arch Linux
+- **WM:** Hyprland (Wayland)
+- **Shell:** zsh
+- **Terminal:** kitty
+
+## Included Configurations
+
+- Hyprland + Waybar
 - Dunst
 - Kitty
-- Neofetch
 - Neovim
-- Picom
-- Polybar
-- Ranger rifle (mime)
+- Ranger (rifle/mime)
 - Rofi
-- Spotify-tui
-- Sxhkd
-- BetterLockScreen
 
 ## Screenshots
 
-Rofi :
+### Terminal
+![Terminal](.assets/terminal.jpg)
 
-![PicomNeovimNeofetch](./.assets/rofi.png)
+### Rofi
+![Rofi](.assets/rofi.jpg)
 
-Polybar :
+### Waybar
+![Waybar](.assets/waybar.jpg)
 
-![Polybar](./.assets/polybar.png)
+### Dunst (Notifications)
+![Notifications](.assets/notifications.jpg)
 
+### Clipboard
+![Clipboard](.assets/clipboard.jpg)
 
-Dunst notif :
-
-![dunstNotif](./.assets/dunst_notif.png)
-
-Picom blur/neovim/neofetch :
-
-![PicomNeovimNeofetch](./.assets/nvim_neofetch_picom_bspwm.png)
-
-BetterLockScreen :
-
-![PicomNeovimNeofetch](./.assets/lockscreen.png)
-
-
-
+### Lockscreen
+![Lockscreen](.assets/lockscreen.jpg)

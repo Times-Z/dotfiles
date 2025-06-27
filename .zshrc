@@ -100,5 +100,6 @@ export LC_ALL=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias spotifydaemon="systemctl --user restart spotifyd.service"
 alias ls='exa -al --tree --level=1 --icons'
+alias clear_packages="sudo pacman -Qtdq | sudo pacman -Rns -"
 
 pokemon-colorscripts -r --no-title
