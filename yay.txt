@@ -1,0 +1,14 @@
+ankama-launcher
+checkupdates-with-aur
+emote
+epson-inkjet-printer-escpr
+pokemon-colorscripts-git
+rofi-greenclip
+streamcontroller
+tidal-hifi-bin
+ttf-delugia-code
+vencord
+visual-studio-code-bin
+windterm-bin
+wlrobs-hg
+yay
