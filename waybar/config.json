@@ -165,6 +165,6 @@
   "custom/powermenu": {
     "format": "",
     "tooltip": false,
-    "on-click": "poweroff"
+    "on-click": "~/.config/waybar/scripts/powermenu"
   }
 }

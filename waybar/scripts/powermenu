@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# ~/.config/rofi/powermenu.sh
+
+OPTIONS="Logout\nLock\nReboot\nPoweroff"
+
+CHOICE=$(echo -e "$OPTIONS" \
+  | rofi -dmenu -i -p "⏻ Power Menu" -lines 4)
+
+case "$CHOICE" in
+  Logout)   hyprctl dispatch exit ;;
+  Lock)     hyprlock ;;
+  Reboot)   systemctl reboot ;;
+  Poweroff) systemctl poweroff ;;
+  *)        exit 0 ;;
+esac
