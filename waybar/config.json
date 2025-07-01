@@ -104,7 +104,9 @@
     "exec": "~/.config/waybar/scripts/updatescheck",
     "return-type": "json",
     "exec-if": "exit 0",
-    "signal": 8
+    "signal": 8,
+    "on-click": "~/.config/waybar/scripts/updatescheck --update",
+    "on-click-right": "pkill -SIGRTMIN+8 waybar"
   },
   "bluetooth": {
     "format": "",
@@ -113,7 +115,7 @@
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click-left": "~/.config/polybar/scripts/bluetooth.sh --toggle",
+    "on-click": "~/.config/polybar/scripts/bluetooth.sh --toggle",
     "on-click-right": "/sbin/overskride"
   },
   "tray": {
