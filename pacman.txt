@@ -38,6 +38,7 @@ gvfs-smb
 htop
 hyprland
 hyprlock
+hypridle
 hyprpaper
 iptables-nft
 iwd
