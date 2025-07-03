@@ -11,12 +11,18 @@ Personal configuration for my Arch Linux environment.
 
 ## Included Configurations
 
-- Hyprland + Waybar
+- Hyprland (hypridle, hyprlock, hyprpaper, modules)
+- Waybar
 - Dunst
 - Kitty
 - Neovim
-- Ranger (rifle/mime)
+- Ranger (rifle)
 - Rofi
+- Pipewire
+- Gpicview
+- Custom font (TimeszFont)
+- Greenclip
+- Zsh (.zshrc)
 
 ## Screenshots
 
