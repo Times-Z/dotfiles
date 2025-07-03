@@ -1,4 +1,5 @@
 ankama-launcher
+bluetooth-autoconnect
 checkupdates-with-aur
 emote
 epson-inkjet-printer-escpr
