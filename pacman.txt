@@ -36,9 +36,9 @@ grub
 gst-plugin-pipewire
 gvfs-smb
 htop
+hypridle
 hyprland
 hyprlock
-hypridle
 hyprpaper
 iptables-nft
 iwd
@@ -55,8 +55,8 @@ minicom
 nano
 nautilus
 neovim
-networkmanager
 network-manager-applet
+networkmanager
 nftables
 noto-fonts
 noto-fonts-cjk
@@ -85,6 +85,7 @@ rxvt-unicode
 slock
 slurp
 smartmontools
+steam
 stress
 swayidle
 terminus-font
