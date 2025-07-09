@@ -1,0 +1,101 @@
+{
+  "archinstall-language": "English",
+  "audio_config": {
+    "audio": "pipewire"
+  },
+  "bootloader": "Grub",
+  "custom_commands": [],
+  "disk_config": {
+    "config_type": "btrfs",
+    "wipe": true,
+    "device_modifications": []
+  },
+  "hostname": "the-beast",
+  "kernels": [
+    "linux-lts"
+  ],
+  "locale_config": {
+    "kb_layout": "fr",
+    "sys_enc": "UTF-8",
+    "sys_lang": "en_US.UTF-8"
+  },
+  "mirror_config": {
+    "custom_repositories": [],
+    "custom_servers": [],
+    "mirror_regions": {
+      "France": [
+        "http://mir.archlinux.fr/$repo/os/$arch",
+        "http://archlinux.mirrors.ovh.net/archlinux/$repo/os/$arch",
+        "https://archlinux.mirrors.ovh.net/archlinux/$repo/os/$arch",
+        "http://mirror.archlinux.ikoula.com/archlinux/$repo/os/$arch",
+        "http://arch.yourlabs.org/$repo/os/$arch",
+        "https://arch.yourlabs.org/$repo/os/$arch",
+        "http://mirror.lastmikoi.net/archlinux/$repo/os/$arch",
+        "http://ftp.u-strasbg.fr/linux/distributions/archlinux/$repo/os/$arch",
+        "http://archlinux.mailtunnel.eu/$repo/os/$arch",
+        "https://archlinux.mailtunnel.eu/$repo/os/$arch",
+        "https://mirror.wormhole.eu/archlinux/$repo/os/$arch",
+        "http://fr.mirrors.cicku.me/archlinux/$repo/os/$arch",
+        "https://fr.mirrors.cicku.me/archlinux/$repo/os/$arch",
+        "https://mirror.thekinrar.fr/archlinux/$repo/os/$arch",
+        "http://mirror.oldsql.cc/archlinux/$repo/os/$arch",
+        "https://mirror.oldsql.cc/archlinux/$repo/os/$arch",
+        "http://mirror.cyberbits.eu/archlinux/$repo/os/$arch",
+        "https://mirror.cyberbits.eu/archlinux/$repo/os/$arch",
+        "https://mirrors.eric.ovh/arch/$repo/os/$arch",
+        "https://mirrors.jtremesay.org/archlinux/$repo/os/$arch",
+        "http://archlinux.datagr.am/$repo/os/$arch",
+        "http://mirror.bakertelekom.fr/Arch/$repo/os/$arch",
+        "https://mirror.bakertelekom.fr/Arch/$repo/os/$arch",
+        "http://mirrors.gandi.net/archlinux/$repo/os/$arch",
+        "https://mirrors.gandi.net/archlinux/$repo/os/$arch",
+        "http://mirror.theo546.fr/archlinux/$repo/os/$arch",
+        "https://mirror.theo546.fr/archlinux/$repo/os/$arch",
+        "http://archmirror.hogwarts.fr/$repo/os/$arch",
+        "https://archmirror.hogwarts.fr/$repo/os/$arch",
+        "http://mirror.its-tps.fr/archlinux/$repo/os/$arch",
+        "https://mirror.its-tps.fr/archlinux/$repo/os/$arch",
+        "http://mirror.rznet.fr/archlinux/$repo/os/$arch",
+        "https://mirror.rznet.fr/archlinux/$repo/os/$arch",
+        "http://arch.syxpi.fr/arch/$repo/os/$arch",
+        "https://arch.syxpi.fr/arch/$repo/os/$arch",
+        "https://elda.asgardius.company/archlinux/$repo/os/$arch",
+        "https://f.matthieul.dev/mirror/archlinux/$repo/os/$arch",
+        "http://mirror.peeres-telecom.fr/archlinux/$repo/os/$arch",
+        "https://mirror.peeres-telecom.fr/archlinux/$repo/os/$arch",
+        "http://mirror.trap.moe/archlinux/$repo/os/$arch",
+        "https://mirror.trap.moe/archlinux/$repo/os/$arch",
+        "https://mirror.smayzy.ovh/archlinux/$repo/os/$arch"
+      ]
+    },
+    "optional_repositories": [
+      "multilib",
+      "testing"
+    ]
+  },
+  "network_config": {
+    "type": "nm"
+  },
+  "ntp": true,
+  "packages": [],
+  "parallel_downloads": 0,
+  "profile_config": {
+    "gfx_driver": "All open-source",
+    "greeter": "ly",
+    "profile": {
+      "custom_settings": {
+        "Hyprland": {
+          "seat_access": "polkit"
+        }
+      },
+      "details": [
+        "Hyprland"
+      ],
+      "main": "Desktop"
+    }
+  },
+  "services": [],
+  "swap": true,
+  "timezone": "Europe/Paris",
+  "version": null
+}
