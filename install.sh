@@ -18,6 +18,11 @@ if [ ! -f "install.sh" ]; then
     exit 0
 fi
 
+if ! pacman -Qi base-devel &>/dev/null; then
+    echo "[INFO] Installing base-devel (required for yay and AUR builds)..."
+    sudo pacman -S --needed base-devel
+fi
+
 if ! command -v yay &> /dev/null; then
     echo "[INFO] yay not found, installing..."
     git clone https://aur.archlinux.org/yay.git /tmp/yay
