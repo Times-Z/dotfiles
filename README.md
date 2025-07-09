@@ -2,6 +2,11 @@
 
 Personal configuration for my Arch Linux environment.
 
+## Install
+```
+curl -s https://raw.githubusercontent.com/Times-Z/dotfiles/refs/heads/main/install.sh | bash -s --
+```
+
 ## System Overview
 
 - **OS:** Arch Linux
