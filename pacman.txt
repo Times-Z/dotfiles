@@ -40,7 +40,6 @@ hypridle
 hyprland
 hyprlock
 hyprpaper
-iptables-nft
 iwd
 jq
 kitty
