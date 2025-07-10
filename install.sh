@@ -47,16 +47,38 @@ echo "[INFO] All packages installed."
 
 echo "[INFO] Copying configuration files..."
 
-cp -r dunst ~/.config/
-cp -r fonts/* ~/.local/share/fonts/ && fc-cache -fv
-cp -r gpicview ~/.config/
-cp -r kitty ~/.config/
-cp -r nvim ~/.config/neovim
-sudo cp pipewire.conf.d/samplerate.conf /etc/pipewire/pipewire.conf.d
-cp -r ranger ~/.config/
-cp -r rofi ~/.config/
-cp -r waybar ~/.config/
-cp .zshrc ~/.zshrc
-cp greenclip.toml ~/.config/greenclip.toml
+copy_config() {
+    local src=$1
+    local dest=$2
+
+    rm -rf "$dest"
+    cp -rf "$src" "$dest"
+    echo "[INFO] Copy $src to $dest"
+}
+
+CONFIG_DIRS=(
+    dunst
+    gpicview
+    kitty
+    ranger
+    rofi
+    waybar
+)
+
+for dir in "${CONFIG_DIRS[@]}"; do
+    copy_config "$dir" "$HOME/.config/$dir"
+done
+
+copy_config "nvim" "$HOME/.config/neovim"
+
+mkdir -p "$HOME/.local/share/fonts"
+cp -rf fonts/* "$HOME/.local/share/fonts/"
+fc-cache -fv
+
+sudo cp -f pipewire.conf.d/samplerate.conf /etc/pipewire/pipewire.conf.d
+
+cp -f .zshrc "$HOME/.zshrc"
+
+cp -f greenclip.toml "$HOME/.config/greenclip.toml"
 
 echo "[INFO] Done!"

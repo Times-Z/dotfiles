@@ -24,7 +24,6 @@ edk2-ovmf
 efibootmgr
 eza
 fastfetch
-feh
 ghostscript
 gimp
 git

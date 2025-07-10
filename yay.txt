@@ -1,7 +1,6 @@
 ankama-launcher
 bluetooth-autoconnect
 checkupdates-with-aur
-emote
 epson-inkjet-printer-escpr
 pokemon-colorscripts-git
 rofi-greenclip
@@ -11,5 +10,4 @@ ttf-delugia-code
 vencord
 visual-studio-code-bin
 windterm-bin
-wlrobs-hg
 yay
