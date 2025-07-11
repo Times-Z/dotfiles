@@ -39,6 +39,7 @@ hypridle
 hyprland
 hyprlock
 hyprpaper
+iptables-nft
 iwd
 jq
 kitty
@@ -59,7 +60,6 @@ nftables
 noto-fonts
 noto-fonts-cjk
 noto-fonts-extra
-obs-studio
 openrgb
 os-prober
 pacman-contrib
@@ -73,6 +73,7 @@ polkit-kde-agent
 polybar
 pop-gtk-theme
 pwgen
+python-pip
 python-pywal
 qemu-base
 qt5-wayland
@@ -94,6 +95,7 @@ vim
 virt-manager
 vulkan-radeon
 waybar
+wev
 wget
 wireless_tools
 wireplumber

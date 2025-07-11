@@ -63,13 +63,12 @@ CONFIG_DIRS=(
     ranger
     rofi
     waybar
+    nvim
 )
 
 for dir in "${CONFIG_DIRS[@]}"; do
     copy_config "$dir" "$HOME/.config/$dir"
 done
-
-copy_config "nvim" "$HOME/.config/neovim"
 
 mkdir -p "$HOME/.local/share/fonts"
 cp -rf fonts/* "$HOME/.local/share/fonts/"
@@ -78,7 +77,11 @@ fc-cache -fv
 sudo cp -f pipewire.conf.d/samplerate.conf /etc/pipewire/pipewire.conf.d
 
 cp -f .zshrc "$HOME/.zshrc"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-completions.git \
+  ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 
 cp -f greenclip.toml "$HOME/.config/greenclip.toml"
+
 
 echo "[INFO] Done!"
