@@ -24,4 +24,4 @@ deploy:github:
       git push -u publicGithub HEAD:main
   only:
     - main
-  when: manual
+  when: always

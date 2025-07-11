@@ -79,8 +79,6 @@ sudo cp -f pipewire.conf.d/samplerate.conf /etc/pipewire/pipewire.conf.d
 
 cp -f .zshrc "$HOME/.zshrc"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-completions.git \
-  ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 
 cp -f greenclip.toml "$HOME/.config/greenclip.toml"
 
