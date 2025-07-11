@@ -59,6 +59,7 @@ copy_config() {
 CONFIG_DIRS=(
     dunst
     gpicview
+    hypr
     kitty
     ranger
     rofi
