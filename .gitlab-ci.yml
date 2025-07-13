@@ -3,7 +3,7 @@ stages:
 
 deploy:github:
   stage: Github
-  image: debian:10
+  image: debian:12
   before_script:
     - apt-get update && apt-get install git ssh -y
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
