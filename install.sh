@@ -20,14 +20,14 @@ fi
 
 if ! pacman -Qi base-devel &>/dev/null; then
     echo "[INFO] Installing base-devel (required for yay and AUR builds)..."
-    sudo pacman -S --needed base-devel
+    sudo pacman -S --needed --noconfirm base-devel
 fi
 
 if ! command -v yay &> /dev/null; then
     echo "[INFO] yay not found, installing..."
     sudo pacman -S go
     git clone https://aur.archlinux.org/yay.git /tmp/yay
-    (cd /tmp/yay && makepkg -si)
+    (cd /tmp/yay && makepkg -si --noconfirm)
 fi
 
 if [ -f pacman.txt ]; then
