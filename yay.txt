@@ -1,6 +1,7 @@
 ankama-launcher
 bluetooth-autoconnect
 checkupdates-with-aur
+downgrade
 epson-inkjet-printer-escpr
 obs-studio-with-websockets
 pokemon-colorscripts-git

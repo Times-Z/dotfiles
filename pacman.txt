@@ -17,6 +17,7 @@ darktable
 dmenu
 dnsmasq
 docker
+docker-buildx
 docker-compose
 dolphin
 dunst
@@ -29,6 +30,7 @@ gimp
 git
 gnome-disk-utility
 gnu-free-fonts
+go
 gpicview
 grim
 grub
@@ -114,5 +116,6 @@ xorg-xrandr
 xsel
 xterm
 yad
+yarn
 zram-generator
 zsh

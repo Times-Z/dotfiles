@@ -25,6 +25,7 @@ fi
 
 if ! command -v yay &> /dev/null; then
     echo "[INFO] yay not found, installing..."
+    sudo pacman -S go
     git clone https://aur.archlinux.org/yay.git /tmp/yay
     (cd /tmp/yay && makepkg -si)
 fi
