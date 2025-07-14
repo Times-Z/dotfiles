@@ -27,6 +27,7 @@ curl -s https://raw.githubusercontent.com/Times-Z/dotfiles/refs/heads/main/insta
 - Gpicview
 - Custom font (TimeszFont)
 - Greenclip
+- Wlogout
 - Zsh (.zshrc)
 
 ## Screenshots
