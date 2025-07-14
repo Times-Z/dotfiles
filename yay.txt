@@ -12,5 +12,6 @@ ttf-delugia-code
 vencord
 visual-studio-code-bin
 windterm-bin
+wlogout
 wlrobs-hg
 yay

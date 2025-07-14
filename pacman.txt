@@ -55,6 +55,7 @@ ly
 minicom
 nano
 nautilus
+ncdu
 neovim
 network-manager-applet
 networkmanager
