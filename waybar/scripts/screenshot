@@ -8,10 +8,15 @@ hyprctl keyword monitor "$SDR_CONFIG"
 
 sleep 0.5
 
-grim -g "$(slurp -d)" - | magick - -colorspace sRGB -depth 8 -define png:color-type=2 -strip png:- | wl-copy
+TMP_SHOT=$(mktemp --suffix .png)
+grim -g "$(slurp -d)" "$TMP_SHOT"
 
-notify-send "Screenshot SDR" "Image copied to clipboard"
-
-sleep 0.2
 hyprctl keyword monitor "$HDR_CONFIG"
-notify-send "Hyprland" "HDR reactivated"
+notify-send "Hyprland" "HDR réactivé"
+
+satty -f "$TMP_SHOT" &
+
+notify-send "Screenshot SDR" "Image copiée dans le presse-papier (édition possible)"
+
+sleep 2
+rm -f "$TMP_SHOT"

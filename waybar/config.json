@@ -167,6 +167,6 @@
   "custom/powermenu": {
     "format": "",
     "tooltip": false,
-    "on-click": "~/.config/waybar/scripts/powermenu"
+    "on-click": "wlogout"
   }
 }
