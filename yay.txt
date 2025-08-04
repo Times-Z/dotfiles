@@ -1,5 +1,6 @@
 ankama-launcher
 bluetooth-autoconnect
+brave-bin
 checkupdates-with-aur
 downgrade
 epson-inkjet-printer-escpr
@@ -14,4 +15,5 @@ visual-studio-code-bin
 windterm-bin
 wlogout
 wlrobs-hg
+xboxdrv
 yay
