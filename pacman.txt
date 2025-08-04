@@ -29,6 +29,7 @@ efibootmgr
 eza
 fastfetch
 firefox
+gamemode
 ghostscript
 gimp
 git
@@ -62,6 +63,7 @@ linux-lts
 loupe
 ly
 mangohud
+mesa-utils
 minicom
 mpv
 nano
@@ -74,6 +76,7 @@ nftables
 noto-fonts
 noto-fonts-cjk
 noto-fonts-extra
+nvme-cli
 openrgb
 os-prober
 pacman-contrib
@@ -93,6 +96,7 @@ python-pywal
 qemu-base
 qt5-wayland
 qt6-wayland
+radeontop
 ranger
 rofi
 rsync
