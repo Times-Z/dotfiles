@@ -4,8 +4,12 @@ brave-bin
 checkupdates-with-aur
 downgrade
 epson-inkjet-printer-escpr
+gamescope-git
 obs-studio-with-websockets
 pokemon-colorscripts-git
+protonplus
+protontricks
+reshade-steam-proton-git
 rofi-greenclip
 streamcontroller
 tidal-hifi-bin

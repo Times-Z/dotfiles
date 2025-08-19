@@ -1,5 +1,6 @@
 alacritty
 amd-ucode
+amdvlk
 archinstall
 argyllcms
 awesome
@@ -55,7 +56,9 @@ iwd
 jq
 kitty
 kvantum-qt5
+lazygit
 less
+lib32-vulkan-mesa-layers
 libpulse
 linux-firmware
 linux-headers
@@ -77,6 +80,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-extra
 nvme-cli
+obsidian
 openrgb
 os-prober
 pacman-contrib
@@ -119,8 +123,12 @@ usbutils
 vde2
 vim
 virt-manager
+vulkan-mesa-layers
 vulkan-radeon
+vulkan-tools
+vulkan-validation-layers
 waybar
+wayland-utils
 wev
 wget
 wine
