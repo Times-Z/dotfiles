@@ -65,6 +65,7 @@ CONFIG_DIRS=(
     ranger
     rofi
     waybar
+    wireplumber
     wlogout
     nvim
 )
