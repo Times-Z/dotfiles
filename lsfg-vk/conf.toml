@@ -1,0 +1,13 @@
+version = 1
+
+[global]
+dll = "~/.local/share/Steam/steamapps/common/Lossless Scaling/Lossless.dll"
+no_fp16 = false
+
+[[game]]
+exe = "helldivers2.exe"
+multiplier = 2
+flow_scale = 0.9
+performance_mode = true
+hdr_mode = true
+experimental_present_mode = "mailbox"

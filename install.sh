@@ -61,6 +61,7 @@ CONFIG_DIRS=(
     dunst
     gpicview
     hypr
+    lsfg-vk
     kitty
     ranger
     rofi

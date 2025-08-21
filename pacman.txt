@@ -1,8 +1,8 @@
 alacritty
 amd-ucode
-amdvlk
 archinstall
 argyllcms
+audacity
 awesome
 base
 base-devel
@@ -31,6 +31,7 @@ eza
 fastfetch
 firefox
 gamemode
+gamescope
 ghostscript
 gimp
 git
@@ -48,6 +49,7 @@ htop
 hugo
 hypridle
 hyprland
+hyprland-protocols
 hyprlock
 hyprpaper
 hyprshot
@@ -58,6 +60,7 @@ kitty
 kvantum-qt5
 lazygit
 less
+lib32-gamemode
 lib32-vulkan-mesa-layers
 libpulse
 linux-firmware
@@ -80,6 +83,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-extra
 nvme-cli
+obs-studio
 obsidian
 openrgb
 os-prober

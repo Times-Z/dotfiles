@@ -4,8 +4,8 @@ brave-bin
 checkupdates-with-aur
 downgrade
 epson-inkjet-printer-escpr
-gamescope-git
-obs-studio-with-websockets
+gamescope-session-git
+lsfg-vk-git
 pokemon-colorscripts-git
 protonplus
 protontricks
@@ -18,6 +18,5 @@ vencord
 visual-studio-code-bin
 windterm-bin
 wlogout
-wlrobs-hg
 xboxdrv
 yay
