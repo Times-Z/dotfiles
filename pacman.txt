@@ -1,9 +1,9 @@
 alacritty
 amd-ucode
+amdgpu_top
 archinstall
 argyllcms
 audacity
-awesome
 base
 base-devel
 bluez
@@ -40,7 +40,6 @@ gnome-disk-utility
 gnu-free-fonts
 go
 godot-mono
-gpicview
 grim
 grub
 gst-plugin-pipewire
@@ -95,7 +94,6 @@ pipewire-jack
 pipewire-pulse
 polkit-gnome
 polkit-kde-agent
-polybar
 pop-gtk-theme
 portmidi
 pwgen
@@ -104,7 +102,6 @@ python-pywal
 qemu-base
 qt5-wayland
 qt6-wayland
-radeontop
 ranger
 rofi
 rsync

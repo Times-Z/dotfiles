@@ -62,6 +62,7 @@ CONFIG_DIRS=(
     gpicview
     hypr
     lsfg-vk
+    MangoHud
     kitty
     ranger
     rofi
