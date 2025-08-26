@@ -1,4 +1,5 @@
 ankama-launcher
+balena-etcher
 bluetooth-autoconnect
 brave-bin
 checkupdates-with-aur

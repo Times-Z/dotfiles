@@ -27,6 +27,7 @@ dotnet-sdk
 dunst
 edk2-ovmf
 efibootmgr
+element-desktop
 eza
 fastfetch
 firefox
@@ -37,6 +38,7 @@ gimp
 git
 git-filter-repo
 gnome-disk-utility
+gnome-keyring
 gnu-free-fonts
 go
 godot-mono
@@ -110,12 +112,14 @@ satty
 sdl2_image
 sdl2_mixer
 sdl2_ttf
+seahorse
 sfml
 slock
 slurp
 smartmontools
 steam
 stress
+stress-ng
 swayidle
 terminus-font
 tiled
