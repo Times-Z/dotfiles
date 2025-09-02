@@ -6,6 +6,7 @@ argyllcms
 audacity
 base
 base-devel
+blueman
 bluez
 bluez-utils
 bridge-utils
@@ -16,8 +17,10 @@ chromium
 colord
 cups
 darktable
+discord
 dkms
 dmenu
+dmidecode
 dnsmasq
 docker
 docker-buildx
@@ -37,6 +40,7 @@ ghostscript
 gimp
 git
 git-filter-repo
+glmark2
 gnome-disk-utility
 gnome-keyring
 gnu-free-fonts
@@ -64,12 +68,15 @@ less
 lib32-gamemode
 lib32-vulkan-mesa-layers
 libpulse
+libva-utils
 linux-firmware
 linux-headers
 linux-lts
+linux-lts-headers
 loupe
 ly
 mangohud
+mesa-demos
 mesa-utils
 minicom
 mpv
@@ -80,12 +87,14 @@ neovim
 network-manager-applet
 networkmanager
 nftables
+noise-suppression-for-voice
 noto-fonts
 noto-fonts-cjk
 noto-fonts-extra
 nvme-cli
 obs-studio
 obsidian
+occt
 openrgb
 os-prober
 pacman-contrib
@@ -132,7 +141,6 @@ vulkan-mesa-layers
 vulkan-radeon
 vulkan-tools
 vulkan-validation-layers
-waybar
 wayland-utils
 wev
 wget

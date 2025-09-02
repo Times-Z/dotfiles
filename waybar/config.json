@@ -11,7 +11,8 @@
     "hyprland/workspaces",
     "cpu",
     "memory",
-    "disk"
+    "disk",
+    "cava"
   ],
   "modules-center": ["hyprland/window"],
   "modules-right": [
@@ -27,7 +28,7 @@
     "format": "  <span color=\"#C4C7C5\">{:%H:%M - %A %d %B}</span>",
     "timezone": "Europe/Paris",
     "locale": "fr_FR.UTF-8",
-    "tooltip": "true",
+    "tooltip": true,
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "mode": "month",
@@ -115,8 +116,7 @@
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "~/.config/polybar/scripts/bluetooth.sh --toggle",
-    "on-click-right": "/sbin/overskride"
+    "on-click": "blueman-manager"
   },
   "tray": {
     "icon-size": 18,
@@ -137,32 +137,25 @@
     "on-click-right": "pavucontrol"
   },
   "cava": {
-    "framerate": 30,
-    "autosens": 1,
-    "sensitivity": 100,
-    "bars": 14,
+    "framerate": 25,
+    "autosens": 0,
+    "sensitivity": 55,
+    "bars": 15,
     "lower_cutoff_freq": 50,
     "higher_cutoff_freq": 10000,
     "method": "pipewire",
     "source": "auto",
-    "stereo": true,
+    "stereo": false,
     "reverse": false,
     "bar_delimiter": 0,
     "monstercat": false,
-    "waves": false,
-    "noise_reduction": 0.77,
-    "input_delay": 2,
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "waves": true,
+    "noise_reduction": 0.1,
+    "input_delay": 0,
+    "format-icons": ["⣀","⣄","⣤","⣦","⣶","⣷","⣿","⣿","⣷","⣶","⣦","⣤","⣄","⣀"],
     "actions": {
       "on-click-right": "mode"
     }
-  },
-  "custom/vpn": {
-    "format": "<span color=\"#C4C7C5\">{}</span>",
-    "interval": 10,
-    "exec": "~/.config/scripts/vpn_manager.sh --status",
-    "on-click": "~/.config/scripts/vpn_manager.sh  --toggle",
-    "tooltip": false
   },
   "custom/powermenu": {
     "format": "",

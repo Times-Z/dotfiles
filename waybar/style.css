@@ -30,6 +30,7 @@ window#waybar {
 #wireplumber,
 #clock,
 #disk,
+#cava,
 #tray {
   margin: 3px;
   padding: 3px 10px 3px 10px;

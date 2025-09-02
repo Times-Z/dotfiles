@@ -7,6 +7,7 @@ downgrade
 epson-inkjet-printer-escpr
 gamescope-session-git
 lsfg-vk-git
+obs-vkcapture-git
 pokemon-colorscripts-git
 protonplus
 protontricks
@@ -16,7 +17,9 @@ streamcontroller
 tidal-hifi-bin
 ttf-delugia-code
 vencord
+vesktop-bin
 visual-studio-code-bin
+waybar-cava
 windterm-bin
 wlogout
 xboxdrv

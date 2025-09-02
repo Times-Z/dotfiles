@@ -70,6 +70,7 @@ CONFIG_DIRS=(
     wireplumber
     wlogout
     nvim
+    systemd
 )
 
 for dir in "${CONFIG_DIRS[@]}"; do
