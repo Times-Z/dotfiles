@@ -34,13 +34,13 @@ curl -s https://raw.githubusercontent.com/Times-Z/dotfiles/refs/heads/main/insta
 ## Screenshots
 
 ### Terminal
-![Terminal](.assets/terminal.jpg)
+![Terminal](.assets/terminal.png)
 
 ### Rofi
 ![Rofi](.assets/rofi.jpg)
 
 ### Waybar
-![Waybar](.assets/waybar.jpg)
+![Waybar](.assets/waybar.png)
 
 ### Dunst (Notifications)
 ![Notifications](.assets/notifications.jpg)

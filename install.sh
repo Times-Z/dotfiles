@@ -58,19 +58,20 @@ copy_config() {
 }
 
 CONFIG_DIRS=(
+    MangoHud
     dunst
     gpicview
     hypr
-    lsfg-vk
-    MangoHud
     kitty
+    lsfg-vk
+    nvim
     ranger
     rofi
+    systemd
     waybar
     wireplumber
     wlogout
-    nvim
-    systemd
+    xdg-desktop-portal
 )
 
 for dir in "${CONFIG_DIRS[@]}"; do
@@ -87,6 +88,5 @@ cp -f .zshrc "$HOME/.zshrc"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 cp -f greenclip.toml "$HOME/.config/greenclip.toml"
-
 
 echo "[INFO] Done!"
