@@ -31,7 +31,16 @@ EOF
 IFS=$'\n'$'\r'
 
 killall -q checkupdates-with-aur
-mapfile -t updates < <(checkupdates-with-aur)
+# Run checkupdates-with-aur but limit execution time to avoid blocking Waybar.
+# If it times out (exit code 124) we return an error result so Waybar doesn't hang.
+mapfile -t updates < <(timeout 60s checkupdates-with-aur)
+rc=$?
+if [ "$rc" -eq 124 ]; then
+        cat <<EOF
+    {"text":"ERR","tooltip":"checkupdates-with-aur timed out"}
+EOF
+        exit 1
+fi
 
 text=${#updates[@]}
 tooltip="<b>$text  updates (arch+aur) </b>\n"

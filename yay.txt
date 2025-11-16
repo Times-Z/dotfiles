@@ -6,8 +6,9 @@ checkupdates-with-aur
 downgrade
 epson-inkjet-printer-escpr
 gamescope-session-git
+hyprsettings-git
 lsfg-vk-git
-obs-vkcapture-git
+marp-cli-bin
 pokemon-colorscripts-git
 protonplus
 protontricks
@@ -16,7 +17,7 @@ rofi-greenclip
 streamcontroller
 tidal-hifi-bin
 ttf-delugia-code
-vencord
+vencord-bin
 vesktop-bin
 visual-studio-code-bin
 waybar-cava

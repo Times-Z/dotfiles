@@ -1,22 +1,25 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
+trap 'exit 1' SIGPIPE
 
-HDR_CONFIG=", highrr, auto, 1, bitdepth, 10, cm, hdr, sdrbrightness, 1.3, sdrsaturation, 1"
+for cmd in grim slurp satty; do
+  command -v "$cmd" >/dev/null 2>&1 || { echo "$cmd not found" >&2; exit 1; }
+done
 
-SDR_CONFIG=", highrr, auto, 1"
+GEOM="$(slurp)" || exit 1
 
-hyprctl keyword monitor "$SDR_CONFIG"
+if command -v ffmpeg >/dev/null 2>&1 && ffmpeg -filters 2>/dev/null | grep -q tonemap; then
+  grim -g "$GEOM" - \
+    | ffmpeg -hide_banner -loglevel error -f image2pipe -i - \
+      -vf "tonemap=tonemap=hable:desat=0,format=rgb24" -f png - - \
+    | satty -f -
+  exit 0
+fi
 
-sleep 0.5
+if command -v magick >/dev/null 2>&1; then
+  grim -g "$GEOM" - | magick - -colorspace sRGB png:- | satty -f -
+  exit 0
+fi
 
-TMP_SHOT=$(mktemp --suffix .png)
-grim -g "$(slurp -d)" "$TMP_SHOT"
-
-hyprctl keyword monitor "$HDR_CONFIG"
-notify-send "Hyprland" "HDR réactivé"
-
-satty -f "$TMP_SHOT" &
-
-notify-send "Screenshot SDR" "Image copiée dans le presse-papier (édition possible)"
-
-sleep 2
-rm -f "$TMP_SHOT"
+# last resort: raw PNG
+grim -g "$GEOM" - | satty -f -

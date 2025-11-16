@@ -1,6 +1,5 @@
 {
   "position": "top",
-  "layer": "top",
   "height": 40,
   "margin-top": 2,
   "margin-bottom": 0,
@@ -137,7 +136,7 @@
     "on-click-right": "pavucontrol"
   },
   "cava": {
-    "framerate": 25,
+    "framerate": 20,
     "autosens": 0,
     "sensitivity": 55,
     "bars": 15,
