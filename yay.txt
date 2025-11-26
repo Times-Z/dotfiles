@@ -1,3 +1,4 @@
+ags-hyprpanel-git
 ankama-launcher
 balena-etcher
 bluetooth-autoconnect
@@ -6,12 +7,15 @@ checkupdates-with-aur
 downgrade
 epson-inkjet-printer-escpr
 gamescope-session-git
+grimblast-git
 hyprsettings-git
 lsfg-vk-git
 marp-cli-bin
+obs-studio-liberty
 pokemon-colorscripts-git
 protonplus
 protontricks
+python-gpustat
 reshade-steam-proton-git
 rofi-greenclip
 streamcontroller

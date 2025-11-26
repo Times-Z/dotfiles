@@ -10,6 +10,7 @@ blueman
 bluez
 bluez-utils
 bridge-utils
+brightnessctl
 btop
 btrfs-progs
 cava
@@ -25,7 +26,6 @@ dnsmasq
 docker
 docker-buildx
 docker-compose
-dolphin
 dotnet-sdk
 dunst
 edk2-ovmf
@@ -57,6 +57,7 @@ hyprland
 hyprland-protocols
 hyprlock
 hyprpaper
+hyprpicker
 hyprshot
 iptables-nft
 iwd
@@ -93,7 +94,6 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-extra
 nvme-cli
-obs-studio
 obsidian
 occt
 openrgb
@@ -145,6 +145,7 @@ strace
 stress
 stress-ng
 swayidle
+swww
 terminus-font
 tiled
 tree

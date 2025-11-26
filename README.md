@@ -39,10 +39,8 @@ curl -s https://raw.githubusercontent.com/Times-Z/dotfiles/refs/heads/main/insta
 ### Rofi
 ![Rofi](.assets/rofi.jpg)
 
-### Waybar
-![Waybar](.assets/waybar.png)
-
-### Dunst (Notifications)
+### Hyprpanel (with notifications)
+![Waybar](.assets/bar.jpg)
 ![Notifications](.assets/notifications.jpg)
 
 ### Clipboard
