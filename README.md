@@ -42,6 +42,7 @@ curl -s https://raw.githubusercontent.com/Times-Z/dotfiles/refs/heads/main/insta
 ### Hyprpanel (with notifications)
 ![Waybar](.assets/bar.jpg)
 ![Notifications](.assets/notifications.jpg)
+![Notifications](.assets/notifications_panel.jpg)
 
 ### Clipboard
 ![Clipboard](.assets/clipboard.jpg)
