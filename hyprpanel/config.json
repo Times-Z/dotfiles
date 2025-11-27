@@ -616,5 +616,10 @@
   "bar.customModules.ram.leftClick": "kitty btop",
   "bar.customModules.storage.leftClick": "kitty ncdu /",
   "bar.volume.rightClick": "pavucontrol",
-  "notifications.autoDismiss": true
+  "notifications.autoDismiss": true,
+  "bar.customModules.cava.leftClick": "kitty cava",
+  "menus.media.ignore": [
+    "Ankama Launcher"
+  ],
+  "menus.media.preferredPlayer": "tidal-hifi"
 }
