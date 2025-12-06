@@ -62,6 +62,7 @@ CONFIG_DIRS=(
     dunst
     gpicview
     hypr
+    hyprpanel
     kitty
     lsfg-vk
     nvim
@@ -70,7 +71,6 @@ CONFIG_DIRS=(
     systemd
     waybar
     wireplumber
-    wlogout
     xdg-desktop-portal
 )
 
