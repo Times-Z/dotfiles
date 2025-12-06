@@ -473,8 +473,8 @@
   "menus.clock.weather.key": "",
   "menus.clock.weather.unit": "metric",
   "menus.dashboard.powermenu.avatar.image": "/home/timesz/.config/hyprpanel/avatar.jpg",
-  "menus.dashboard.powermenu.avatar.name": "",
-  "theme.bar.menus.menu.dashboard.profile.size": "10em",
+  "menus.dashboard.powermenu.avatar.name": "system",
+  "theme.bar.menus.menu.dashboard.profile.size": "12em",
   "theme.bar.menus.menu.dashboard.profile.radius": "1em",
   "menus.dashboard.recording.path": "$HOME/Videos/obs",
   "theme.bar.buttons.modules.microphone.enableBorder": false,
@@ -517,7 +517,7 @@
   "bar.network.label": false,
   "bar.network.showWifiInfo": true,
   "bar.network.truncation": true,
-  "bar.bluetooth.label": true,
+  "bar.bluetooth.label": false,
   "bar.battery.label": true,
   "bar.battery.hideLabelWhenFull": true,
   "theme.bar.buttons.systray.enableBorder": false,
@@ -526,7 +526,7 @@
   "bar.clock.showTime": true,
   "bar.clock.format": "%H:%M - %a %b %d",
   "theme.bar.buttons.media.enableBorder": false,
-  "bar.media.format": "{title} by {artist}",
+  "bar.media.format": "{title: by }{artist}",
   "bar.media.show_label": true,
   "theme.bar.buttons.notifications.enableBorder": false,
   "bar.notifications.show_total": false,
@@ -600,7 +600,7 @@
   "menus.transitionTime": 100,
   "scalingPriority": "hyprland",
   "hyprpanel.restartCommand": "hyprpanel restart",
-  "hyprpanel.restartAgs": false,
+  "hyprpanel.restartAgs": true,
   "bar.workspaces.applicationIconMap": {
     "kitty": "",
     "Element": "󰭹",
@@ -621,5 +621,14 @@
   "menus.media.ignore": [
     "Ankama Launcher"
   ],
-  "menus.media.preferredPlayer": "tidal-hifi"
+  "menus.media.preferredPlayer": "tidal-hifi",
+  "menus.media.noMediaText": "No Media Currently Playing",
+  "menus.dashboard.controls.enabled": false,
+  "menus.dashboard.stats.enabled": true,
+  "menus.dashboard.stats.enable_gpu": true,
+  "bar.customModules.cpu.showPerCoreUsage": true,
+  "menus.clock.calendar.enabled": true,
+  "menus.clock.calendar.sources": [
+    ""
+  ]
 }

@@ -13,6 +13,7 @@ bridge-utils
 brightnessctl
 btop
 btrfs-progs
+calc
 cava
 chromium
 colord
@@ -27,7 +28,6 @@ docker
 docker-buildx
 docker-compose
 dotnet-sdk
-dunst
 edk2-ovmf
 efibootmgr
 element-desktop
@@ -129,6 +129,7 @@ qt6-wayland
 ranger
 rofi
 rsync
+rust
 rxvt-unicode
 satty
 scrcpy

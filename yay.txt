@@ -1,6 +1,7 @@
 ags-hyprpanel-git
 ankama-launcher
 balena-etcher
+bfg
 bluetooth-autoconnect
 brave-bin
 checkupdates-with-aur
