@@ -12,7 +12,6 @@ grimblast-git
 hyprsettings-git
 lsfg-vk-git
 marp-cli-bin
-obs-studio-liberty
 pokemon-colorscripts-git
 protonplus
 protontricks
@@ -28,5 +27,6 @@ visual-studio-code-bin
 waybar-cava
 windterm-bin
 wlogout
+wlrobs
 xboxdrv
 yay

@@ -1,4 +1,5 @@
 alacritty
+alsa-utils
 amd-ucode
 amdgpu_top
 archinstall
@@ -14,6 +15,7 @@ brightnessctl
 btop
 btrfs-progs
 calc
+cameractrls
 cava
 chromium
 colord
@@ -94,6 +96,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-extra
 nvme-cli
+obs-studio
 obsidian
 occt
 openrgb
@@ -127,6 +130,7 @@ qemu-base
 qt5-wayland
 qt6-wayland
 ranger
+rocm-smi-lib
 rofi
 rsync
 rust
@@ -206,6 +210,7 @@ ttf-ubuntu-nerd
 ttf-victor-mono-nerd
 ttf-zed-mono-nerd
 usbutils
+v4l2loopback-dkms
 vde2
 vim
 virt-manager
@@ -224,7 +229,6 @@ wlr-randr
 wofi
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
-xdg-desktop-portal-wlr
 xdo
 xf86-video-amdgpu
 xf86-video-ati
