@@ -1,0 +1,540 @@
+{
+    "Base.json": {
+        "brightness": {
+            "overwrite": false,
+            "value": 75
+        },
+        "auto-change": {
+            "enable": true,
+            "wm_class": "",
+            "title": "",
+            "stay_on_page": true
+        },
+        "keys": {
+            "0x0": {
+                "states": {
+                    "0": {
+                        "media": {
+                            "path": null,
+                            "size": 1.0,
+                            "valign": null
+                        },
+                        "background": {
+                            "color": null
+                        },
+                        "labels": {
+                            "top": {
+                                "text": "",
+                                "font-family": "Delugia",
+                                "style": "normal",
+                                "font-size": 24.0,
+                                "font-weight": 400,
+                                "outline_color": null,
+                                "outline_width": 1,
+                                "color": null
+                            },
+                            "bottom": {
+                                "font-family": "Delugia",
+                                "style": "normal",
+                                "font-size": 24.0,
+                                "font-weight": 400,
+                                "outline_width": 1,
+                                "text": ""
+                            }
+                        },
+                        "actions": [
+                            {
+                                "id": "com_core447_MediaPlugin::Info",
+                                "settings": {
+                                    "show_label": true,
+                                    "show_thumbnail": true,
+                                    "seperator_text": "",
+                                    "blacklist": [
+                                        "Brave",
+                                        "Ankama Launcher"
+                                    ],
+                                    "player_name": "tidal-hifi"
+                                }
+                            },
+                            {
+                                "id": "com_core447_DeckPlugin::ChangePage",
+                                "settings": {
+                                    "selected_page": "/home/timesz/.var/app/com.core447.StreamController/data/pages/Music.json",
+                                    "deck_number": "Invalid SN!"
+                                },
+                                "comment": "Music"
+                            }
+                        ],
+                        "image-control-action": 0,
+                        "label-control-actions": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "background-control-action": 0
+                    }
+                }
+            },
+            "0x1": {
+                "states": {
+                    "0": {
+                        "actions": [
+                            {
+                                "id": "com_core447_OSPlugin::CPU",
+                                "settings": {}
+                            },
+                            {
+                                "id": "com_core447_OSPlugin::CPU_Graph",
+                                "settings": {
+                                    "dynamic-scaling": false,
+                                    "toggle-dynamic-scaling-on-press": false
+                                }
+                            }
+                        ],
+                        "image-control-action": 1,
+                        "label-control-actions": [
+                            null,
+                            0,
+                            null
+                        ],
+                        "background-control-action": 2,
+                        "labels": {
+                            "top": {
+                                "text": "CPU",
+                                "outline_width": 1
+                            },
+                            "center": {
+                                "outline_width": 1
+                            }
+                        }
+                    }
+                }
+            },
+            "2x0": {
+                "states": {
+                    "0": {
+                        "actions": [
+                            {
+                                "id": "com_core447_DeckPlugin::ChangePage",
+                                "settings": {
+                                    "selected_page": "/home/timesz/.var/app/com.core447.StreamController/data/pages/Gaming.json",
+                                    "deck_number": "Invalid SN!"
+                                }
+                            }
+                        ],
+                        "image-control-action": 0,
+                        "label-control-actions": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "background-control-action": 0,
+                        "media": {
+                            "path": "/home/timesz/.var/app/com.core447.StreamController/data/icons/com_core447_MaterialIcons/icons/games-inv.png"
+                        }
+                    }
+                }
+            },
+            "2x1": {
+                "states": {
+                    "0": {
+                        "actions": [
+                            {
+                                "id": "com_core447_OSPlugin::RAM",
+                                "settings": {}
+                            },
+                            {
+                                "id": "com_core447_OSPlugin::RAM_Graph",
+                                "settings": {}
+                            }
+                        ],
+                        "image-control-action": 1,
+                        "label-control-actions": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "background-control-action": 0,
+                        "labels": {
+                            "top": {
+                                "text": "RAM",
+                                "outline_width": 1
+                            },
+                            "center": {
+                                "outline_width": 1
+                            }
+                        }
+                    }
+                }
+            },
+            "1x0": {
+                "states": {
+                    "0": {
+                        "actions": [
+                            {
+                                "id": "com_core447_DeckPlugin::ChangePage",
+                                "settings": {
+                                    "selected_page": "/home/timesz/.var/app/com.core447.StreamController/data/pages/OBS.json",
+                                    "deck_number": "Invalid SN!"
+                                }
+                            }
+                        ],
+                        "image-control-action": 0,
+                        "label-control-actions": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "background-control-action": 0,
+                        "media": {
+                            "path": "/home/timesz/.var/app/com.core447.StreamController/data/icons/com_core447_MaterialIcons/icons/camera-inv.png"
+                        }
+                    }
+                }
+            },
+            "1x1": {
+                "states": {
+                    "0": {
+                        "actions": [
+                            {
+                                "id": "com_core447_OSPlugin::RunCommand",
+                                "settings": {
+                                    "command": "amdgpu_top -J -d | jq -r '.[0].gpu_activity.GFX.value | tostring + \"%\"'",
+                                    "display_output": true,
+                                    "detached": false,
+                                    "auto_run": 1.0,
+                                    "keep_auto_run_in_background": false
+                                },
+                                "event-assignments": {
+                                    "Key Down": "Key Down",
+                                    "Key Up": "Key Up",
+                                    "Key Short Up": "Key Short Up",
+                                    "Key Hold Start": "Key Hold Start",
+                                    "Key Hold Stop": "Key Hold Stop",
+                                    "Dial Down": "Dial Down",
+                                    "Dial Up": "Dial Up",
+                                    "Dial Short Up": "Dial Short Up",
+                                    "Dial Hold Start": "Dial Hold Start",
+                                    "Dial Hold Stop": "Dial Hold Stop",
+                                    "Dial Turn CW": "Dial Turn CW",
+                                    "Dial Turn CCW": "Dial Turn CCW",
+                                    "Dial Touchscreen Short Press": "Dial Touchscreen Short Press",
+                                    "Dial Touchscreen Long Press": "Dial Touchscreen Long Press",
+                                    "Touchscreen Drag Left": "Touchscreen Drag Left",
+                                    "Touchscreen Drag Right": "Touchscreen Drag Right"
+                                }
+                            }
+                        ],
+                        "image-control-action": null,
+                        "label-control-actions": [
+                            null,
+                            0,
+                            null
+                        ],
+                        "background-control-action": 0,
+                        "labels": {
+                            "top": {
+                                "text": "GPU",
+                                "outline_width": 1
+                            },
+                            "center": {
+                                "outline_width": 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "Gaming.json": {
+        "auto-change": {
+            "decks": [
+                "Invalid SN!"
+            ]
+        },
+        "keys": {}
+    },
+    "HelldiversII.json": {
+        "auto-change": {
+            "decks": [
+                "Invalid SN!"
+            ]
+        },
+        "keys": {
+            "2x1": {
+                "states": {
+                    "0": {
+                        "actions": [
+                            {
+                                "id": "com_core447_DeckPlugin::ChangePage",
+                                "settings": {
+                                    "selected_page": "/home/timesz/.var/app/com.core447.StreamController/data/pages/Base.json",
+                                    "deck_number": null
+                                }
+                            }
+                        ],
+                        "image-control-action": 0,
+                        "label-control-actions": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "background-control-action": 0,
+                        "media": {
+                            "path": "/home/timesz/.var/app/com.core447.StreamController/data/icons/com_core447_MaterialIcons/icons/arrow_back_ios-inv.png"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "Music.json": {
+        "auto-change": {
+            "decks": [
+                "Invalid SN!"
+            ]
+        },
+        "keys": {
+            "0x0": {
+                "states": {
+                    "0": {
+                        "media": {
+                            "path": null
+                        },
+                        "actions": [
+                            {
+                                "id": "com_core447_MediaPlugin::Previous",
+                                "settings": {
+                                    "show_label": false,
+                                    "show_thumbnail": false
+                                }
+                            }
+                        ],
+                        "image-control-action": 0,
+                        "label-control-actions": [
+                            null,
+                            null,
+                            null
+                        ],
+                        "background-control-action": null,
+                        "labels": {
+                            "bottom": {
+                                "font-family": "Delugia",
+                                "style": "normal",
+                                "font-size": 12.0,
+                                "font-weight": 400
+                            }
+                        }
+                    }
+                }
+            },
+            "1x0": {
+                "states": {
+                    "0": {
+                        "media": {
+                            "path": null
+                        },
+                        "actions": [
+                            {
+                                "id": "com_core447_MediaPlugin::PlayPause",
+                                "settings": {
+                                    "show_label": false,
+                                    "show_thumbnail": false
+                                }
+                            }
+                        ],
+                        "image-control-action": 0,
+                        "label-control-actions": [
+                            null,
+                            null,
+                            null
+                        ],
+                        "background-control-action": null
+                    }
+                }
+            },
+            "2x0": {
+                "states": {
+                    "0": {
+                        "actions": [
+                            {
+                                "id": "com_core447_MediaPlugin::Next",
+                                "settings": {
+                                    "show_label": false,
+                                    "show_thumbnail": false
+                                }
+                            }
+                        ],
+                        "image-control-action": 0,
+                        "label-control-actions": [
+                            null,
+                            null,
+                            null
+                        ],
+                        "background-control-action": 0
+                    }
+                }
+            },
+            "2x1": {
+                "states": {
+                    "0": {
+                        "actions": [
+                            {
+                                "id": "com_core447_DeckPlugin::ChangePage",
+                                "settings": {
+                                    "selected_page": "/home/timesz/.var/app/com.core447.StreamController/data/pages/Base.json",
+                                    "deck_number": "Invalid SN!"
+                                }
+                            }
+                        ],
+                        "image-control-action": 0,
+                        "label-control-actions": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "background-control-action": 0,
+                        "media": {
+                            "path": "/home/timesz/.var/app/com.core447.StreamController/data/icons/com_core447_MaterialIcons/icons/keyboard_return-inv.png"
+                        }
+                    }
+                }
+            },
+            "1x1": {
+                "states": {
+                    "0": {
+                        "actions": [
+                            {
+                                "id": "com_core447_MediaPlugin::Info",
+                                "settings": {
+                                    "show_label": true,
+                                    "show_thumbnail": false,
+                                    "seperator_text": ""
+                                }
+                            },
+                            {
+                                "id": "com_core447_MediaPlugin::Thumbnail",
+                                "settings": {
+                                    "show_label": false,
+                                    "show_thumbnail": true
+                                }
+                            }
+                        ],
+                        "image-control-action": 0,
+                        "label-control-actions": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "background-control-action": 0,
+                        "labels": {
+                            "top": {
+                                "font-family": "Delugia",
+                                "style": "normal",
+                                "font-size": 24.0,
+                                "font-weight": 400
+                            },
+                            "center": {
+                                "font-family": "Delugia",
+                                "style": "normal",
+                                "font-size": 24.0,
+                                "font-weight": 400
+                            },
+                            "bottom": {
+                                "font-family": "Delugia",
+                                "style": "normal",
+                                "font-size": 24.0,
+                                "font-weight": 400
+                            }
+                        }
+                    }
+                }
+            },
+            "0x1": {
+                "states": {
+                    "0": {
+                        "actions": [
+                            {
+                                "id": "com_gapls_AudioControl::Mute",
+                                "settings": {
+                                    "use-standard": false,
+                                    "info-content": "adjustment",
+                                    "pulse-name": "alsa_output.usb-FIIO_FiiO_K11-01.pro-output-0"
+                                }
+                            }
+                        ],
+                        "image-control-action": 0,
+                        "label-control-actions": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "background-control-action": 0,
+                        "labels": {
+                            "top": {
+                                "font-family": "Delugia",
+                                "style": "normal",
+                                "font-size": 15.0,
+                                "font-weight": 400
+                            },
+                            "bottom": {
+                                "font-family": "Delugia",
+                                "style": "normal",
+                                "font-size": 15.0,
+                                "font-weight": 400
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "OBS.json": {
+        "keys": {
+            "2x1": {
+                "states": {
+                    "0": {
+                        "actions": [
+                            {
+                                "id": "com_core447_DeckPlugin::ChangePage",
+                                "settings": {
+                                    "selected_page": "/home/timesz/.var/app/com.core447.StreamController/data/pages/Base.json",
+                                    "deck_number": null
+                                }
+                            }
+                        ],
+                        "image-control-action": 0,
+                        "label-control-actions": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "background-control-action": 0,
+                        "media": {
+                            "path": "/home/timesz/.var/app/com.core447.StreamController/data/icons/com_core447_MaterialIcons/icons/arrow_back_ios-inv.png"
+                        }
+                    }
+                }
+            },
+            "0x0": {
+                "states": {
+                    "0": {
+                        "actions": [
+                            {
+                                "id": "com_core447_OBSPlugin::ToggleRecord",
+                                "settings": {}
+                            }
+                        ],
+                        "image-control-action": 0,
+                        "label-control-actions": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "background-control-action": 0
+                    }
+                }
+            }
+        }
+    }
+}
