@@ -1,13 +1,109 @@
 version = 1
 
 [global]
-dll = "~/.local/share/Steam/steamapps/common/Lossless Scaling/Lossless.dll"
+dll = "/home/timesz/.local/share/Steam/steamapps/common/Lossless Scaling/Lossless.dll"
 no_fp16 = false
+
+[[game]]
+exe = "DyingLightGame.exe"
+multiplier = 2
+flow_scale = 0.9
+performance_mode = true
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "DyingLightGame_x64_rwdi.exe"
+multiplier = 2
+flow_scale = 0.85
+performance_mode = true
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "GhostOfTsushima.exe"
+multiplier = 2
+flow_scale = 0.9
+performance_mode = true
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "JWE2.exe"
+multiplier = 2
+flow_scale = 0.9
+performance_mode = true
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "Maneater-Win64-Shipping.exe"
+multiplier = 2
+flow_scale = 0.9
+performance_mode = true
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "NewWorld.exe"
+multiplier = 2
+flow_scale = 0.9
+performance_mode = true
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "PioneerGame.exe"
+multiplier = 2
+flow_scale = 0.9
+performance_mode = true
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "Stray-Win64-Shipping.exe"
+multiplier = 2
+flow_scale = 0.9
+performance_mode = true
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "TL.exe"
+multiplier = 2
+flow_scale = 0.9
+performance_mode = true
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "bg3.exe"
+multiplier = 2
+flow_scale = 0.9
+performance_mode = true
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "foundation.exe"
+multiplier = 2
+flow_scale = 0.9
+performance_mode = true
+hdr_mode = false
+experimental_present_mode = "fifo"
 
 [[game]]
 exe = "helldivers2.exe"
 multiplier = 2
 flow_scale = 0.9
 performance_mode = true
-hdr_mode = true
-experimental_present_mode = "mailbox"
+hdr_mode = false
+experimental_present_mode = "fifo"
+
+[[game]]
+exe = "zaap"
+multiplier = 2
+flow_scale = 0.9
+performance_mode = true
+hdr_mode = false
+experimental_present_mode = "fifo"
