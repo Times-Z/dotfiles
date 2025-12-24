@@ -9,6 +9,7 @@ downgrade
 epson-inkjet-printer-escpr
 gamescope-session-git
 grimblast-git
+hyprmon-bin
 hyprsettings-git
 lsfg-vk-git
 marp-cli-bin
@@ -30,3 +31,4 @@ wlogout
 wlrobs
 xboxdrv
 yay
+yay-debug
