@@ -5,15 +5,9 @@
   },
   "bootloader": "Grub",
   "custom_commands": [],
-  "disk_config": {
-    "config_type": "btrfs",
-    "wipe": true,
-    "device_modifications": []
-  },
+  "disk_config": {},
   "hostname": "the-beast",
-  "kernels": [
-    "linux-lts"
-  ],
+  "kernels": ["linux-lts"],
   "locale_config": {
     "kb_layout": "fr",
     "sys_enc": "UTF-8",
@@ -68,10 +62,7 @@
         "https://mirror.smayzy.ovh/archlinux/$repo/os/$arch"
       ]
     },
-    "optional_repositories": [
-      "multilib",
-      "testing"
-    ]
+    "optional_repositories": ["multilib", "testing"]
   },
   "network_config": {
     "type": "nm"
@@ -88,9 +79,7 @@
           "seat_access": "polkit"
         }
       },
-      "details": [
-        "Hyprland"
-      ],
+      "details": ["Hyprland"],
       "main": "Desktop"
     }
   },
