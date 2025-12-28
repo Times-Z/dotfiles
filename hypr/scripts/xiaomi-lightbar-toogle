@@ -1,0 +1,6 @@
+#!/bin/bash
+
+readonly API_KEY="your_api_key_here"
+readonly DEVICE_IP="192.168.1.x"
+
+curl -s -X "POST" "http://${DEVICE_IP}/api/v1/xiaomi/power/toogle" -H "accept: application/json" -H "X-API-Key: ${API_KEY}"
