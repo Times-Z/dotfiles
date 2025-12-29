@@ -1,0 +1,49 @@
+{
+    "allowDuplicates": false,
+    "historyFile": "clipboard_history.json",
+    "maxHistory": 1000,
+    "deleteAfter": 0,
+    "logFile": "/tmp/clipse.log",
+    "pollInterval": 50,
+    "maxEntryLength": 65,
+    "themeFile": "custom_theme.json",
+    "tempDir": "/tmp/clipse",
+    "keyBindings": {
+        "choose": "enter",
+        "clearSelected": "S",
+        "down": "down",
+        "end": "end",
+        "filter": "/",
+        "forceQuit": "Q",
+        "home": "home",
+        "more": "?",
+        "nextPage": "right",
+        "prevPage": "left",
+        "preview": " ",
+        "quit": "esc",
+        "remove": "backspace",
+        "selectDown": "shift+down",
+        "selectSingle": "s",
+        "selectUp": "shift+up",
+        "togglePin": "p",
+        "togglePinned": "tab",
+        "up": "up",
+        "yankFilter": "ctrl+s"
+    },
+    "imageDisplay": {
+        "type": "basic",
+        "scaleX": 50,
+        "scaleY": 50,
+        "heightCut": 0
+    },
+    "excludedApps": [
+        ""
+    ],
+    "autoPaste": {
+        "enabled": false,
+        "keybind": "ctrl+v",
+        "buffer": 10
+    },
+    "enableMouse": false,
+    "enableDescription": true
+}

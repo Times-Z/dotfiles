@@ -58,8 +58,8 @@ copy_config() {
 }
 
 CONFIG_DIRS=(
+    clipse
     MangoHud
-    dunst
     gpicview
     hypr
     hyprpanel
@@ -86,7 +86,5 @@ sudo cp -f pipewire.conf.d/samplerate.conf /etc/pipewire/pipewire.conf.d
 
 cp -f .zshrc "$HOME/.zshrc"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-cp -f greenclip.toml "$HOME/.config/greenclip.toml"
 
 echo "[INFO] Done!"
