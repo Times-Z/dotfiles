@@ -3,7 +3,7 @@
     "historyFile": "clipboard_history.json",
     "maxHistory": 1000,
     "deleteAfter": 0,
-    "logFile": "/tmp/clipse.log",
+    "logFile": "/tmp/clipse/clipse.log",
     "pollInterval": 50,
     "maxEntryLength": 65,
     "themeFile": "custom_theme.json",
