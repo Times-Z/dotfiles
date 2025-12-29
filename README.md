@@ -28,23 +28,6 @@ curl -s https://raw.githubusercontent.com/Times-Z/dotfiles/refs/heads/main/insta
 - **Shell:** zsh
 - **Terminal:** kitty
 
-## Included Configurations
-
-- Hyprland (hypridle, hyprlock, hyprpaper, modules)
-- Waybar
-- Dunst
-- Kitty
-- Neovim
-- Ranger (rifle)
-- Rofi
-- Pipewire
-- Gpicview
-- Custom font (TimeszFont)
-- Greenclip
-- Wlogout
-- Wireplumber
-- Zsh (.zshrc)
-
 ## Screenshots
 
 ### Terminal

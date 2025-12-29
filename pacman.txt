@@ -63,6 +63,7 @@ hyprshot
 iptables-nft
 iwd
 jq
+kdenlive
 kitty
 kvantum-qt5
 lazygit

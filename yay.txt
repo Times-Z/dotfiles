@@ -5,6 +5,7 @@ bfg
 bluetooth-autoconnect
 brave-bin
 checkupdates-with-aur
+clipse
 downgrade
 epson-inkjet-printer-escpr
 gamescope-session-git
@@ -18,7 +19,6 @@ protonplus
 protontricks
 python-gpustat
 reshade-steam-proton-git
-rofi-greenclip
 streamcontroller
 tidal-hifi-bin
 ttf-delugia-code
