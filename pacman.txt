@@ -2,6 +2,7 @@ alacritty
 alsa-utils
 amd-ucode
 amdgpu_top
+arch-audit
 archinstall
 argyllcms
 audacity
@@ -79,6 +80,7 @@ linux-lts-headers
 loupe
 lutris
 ly
+lynis
 mangohud
 mesa-demos
 mesa-utils
@@ -130,6 +132,7 @@ qemu-base
 qt5-wayland
 qt6-wayland
 ranger
+rkhunter
 rocm-smi-lib
 rofi
 rsync
@@ -151,6 +154,7 @@ stress
 stress-ng
 swayidle
 swww
+sysstat
 terminus-font
 tiled
 tree

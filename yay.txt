@@ -12,13 +12,14 @@ gamescope-session-git
 grimblast-git
 hyprmon-bin
 hyprsettings-git
-lsfg-vk-git
+lsfg-vk
 marp-cli-bin
 pokemon-colorscripts-git
 protonplus
 protontricks
 python-gpustat
 reshade-steam-proton-git
+smile
 streamcontroller
 tidal-hifi-bin
 ttf-delugia-code
