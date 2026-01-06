@@ -1,22 +1,6 @@
 #!/bin/bash
 set -e
 
-pacman_safe() {
-    set +e
-    sudo pacman "$@"
-    local status=$?
-    set -e
-    return $status
-}
-
-yay_safe() {
-    set +e
-    yay "$@"
-    local status=$?
-    set -e
-    return $status
-}
-
 REPO_URL="https://github.com/Times-Z/dotfiles.git"
 REPO_NAME="dotfiles"
 
@@ -50,31 +34,42 @@ fi
 
 if [ -f pacman.txt ]; then
     echo "[INFO] Installing pacman packages..."
-    
+
     PKGS=$(grep -vE '^[ \t]*#' pacman.txt | xargs)
-    
-    pacman_safe -Sy --needed --noconfirm $PKGS || {
+
+    set +e
+    sudo pacman -Sy --needed --noconfirm $PKGS
+    status=$?
+    set -e
+
+    if [ $status -ne 0 ]; then
         echo
         echo "[WARN] Conflicts detected. Switching to interactive mode..."
-        pacman_safe -Syu --needed $PKGS
-    }
+        sudo pacman -Syu --needed $PKGS
+    fi
 else
     echo "[WARN] pacman.txt not found."
 fi
 
 if [ -f yay.txt ]; then
     echo "[INFO] Installing AUR packages..."
-    
+
     YAY_PKGS=$(grep -vE '^[ \t]*#' yay.txt | xargs)
-    
-    yay_safe -Sy --needed --noconfirm $YAY_PKGS || {
+
+    set +e
+    yay -Sy --needed --noconfirm $YAY_PKGS
+    status=$?
+    set -e
+
+    if [ $status -ne 0 ]; then
         echo
         echo "[WARN] AUR conflicts detected. Switching to interactive mode..."
-        yay_safe -S --needed $YAY_PKGS
-    }
+        yay -S --needed $YAY_PKGS
+    fi
 else
     echo "[WARN] yay.txt not found."
 fi
+
 
 echo "[INFO] All packages installed."
 
