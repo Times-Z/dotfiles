@@ -1,18 +1,34 @@
 #!/bin/bash
 set -e
 
+pacman_safe() {
+    set +e
+    sudo pacman "$@"
+    local status=$?
+    set -e
+    return $status
+}
+
+yay_safe() {
+    set +e
+    yay "$@"
+    local status=$?
+    set -e
+    return $status
+}
+
 REPO_URL="https://github.com/Times-Z/dotfiles.git"
 REPO_NAME="dotfiles"
 
 if [[ "${BASH_SOURCE[0]}" != "$0" || ! -f "$(dirname "${BASH_SOURCE[0]}")/pacman.txt" ]]; then
     echo "[INFO] Bootstrapping from remote..."
-
+    
     TMPDIR=$(mktemp -d)
-
+    
     if ! command -v git &> /dev/null; then
         sudo pacman -S --needed git
     fi
-
+    
     git clone --depth=1 "$REPO_URL" "$TMPDIR/$REPO_NAME"
     exec bash "$TMPDIR/$REPO_NAME/install.sh" "$@"
     exit 0
@@ -34,13 +50,13 @@ fi
 
 if [ -f pacman.txt ]; then
     echo "[INFO] Installing pacman packages..."
-
+    
     PKGS=$(grep -vE '^[ \t]*#' pacman.txt | xargs)
-
-    sudo pacman -Sy --needed --noconfirm $PKGS || {
+    
+    pacman_safe -Sy --needed --noconfirm $PKGS || {
         echo
         echo "[WARN] Conflicts detected. Switching to interactive mode..."
-        sudo pacman -Syu --needed $PKGS
+        pacman_safe -Syu --needed $PKGS
     }
 else
     echo "[WARN] pacman.txt not found."
@@ -48,13 +64,13 @@ fi
 
 if [ -f yay.txt ]; then
     echo "[INFO] Installing AUR packages..."
-
+    
     YAY_PKGS=$(grep -vE '^[ \t]*#' yay.txt | xargs)
-
-    yay -Sy --needed --noconfirm $YAY_PKGS || {
+    
+    yay_safe -Sy --needed --noconfirm $YAY_PKGS || {
         echo
         echo "[WARN] AUR conflicts detected. Switching to interactive mode..."
-        yay -S --needed $YAY_PKGS
+        yay_safe -S --needed $YAY_PKGS
     }
 else
     echo "[WARN] yay.txt not found."
@@ -67,7 +83,7 @@ echo "[INFO] Copying configuration files..."
 copy_config() {
     local src=$1
     local dest=$2
-
+    
     rm -rf "$dest"
     cp -rf "$src" "$dest"
     echo "[INFO] Copy $src to $dest"
