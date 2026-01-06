@@ -41,13 +41,13 @@ if [ -f pacman.txt ]; then
     sudo pacman -Sy --needed --noconfirm $PKGS
 
     status=$?
+    set -e
 
     if [ $status -ne 0 ]; then
         echo
         echo "[WARN] Conflicts detected. Switching to interactive mode..."
         sudo pacman -Syu --needed $PKGS < /dev/tty
     fi
-    set -e
 else
     echo "[WARN] pacman.txt not found."
 fi
@@ -61,6 +61,7 @@ if [ -f yay.txt ]; then
     yay -Sy --needed --noconfirm $YAY_PKGS
 
     status=$?
+    set -e
 
     if [ $status -ne 0 ]; then
         echo
@@ -68,7 +69,6 @@ if [ -f yay.txt ]; then
         yay -S --needed $YAY_PKGS < /dev/tty
     fi
 
-    set -e
 else
     echo "[WARN] yay.txt not found."
 fi
