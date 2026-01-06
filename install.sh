@@ -18,6 +18,8 @@ if [[ "${BASH_SOURCE[0]}" != "$0" || ! -f "$(dirname "${BASH_SOURCE[0]}")/pacman
     exit 0
 fi
 
+cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+
 if ! pacman -Qi base-devel &>/dev/null; then
     echo "[INFO] Installing base-devel (required for yay and AUR builds)..."
     sudo pacman -S --needed --noconfirm base-devel
