@@ -5,6 +5,7 @@ bfg
 bluetooth-autoconnect
 brave-bin
 checkupdates-with-aur
+ckbcomp
 clipse
 downgrade
 epson-inkjet-printer-escpr

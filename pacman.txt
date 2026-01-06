@@ -117,6 +117,8 @@ otf-opendyslexic-nerd
 otf-overpass-nerd
 pacman-contrib
 pavucontrol
+perl-image-exiftool
+picocom
 pipewire
 pipewire-alsa
 pipewire-jack
@@ -140,6 +142,7 @@ rust
 rxvt-unicode
 satty
 scrcpy
+screen
 sdl2_image
 sdl2_mixer
 sdl2_ttf
@@ -157,6 +160,7 @@ swww
 sysstat
 terminus-font
 tiled
+tk
 tree
 ttf-0xproto-nerd
 ttf-3270-nerd
