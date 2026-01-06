@@ -18,7 +18,7 @@ archinstall --config /tmp/user_configuration.json
 
 ### Install dotfiles
 ```bash
-curl -s https://raw.githubusercontent.com/Times-Z/dotfiles/refs/heads/main/install.sh | bash -s --
+curl -fsSL https://raw.githubusercontent.com/Times-Z/dotfiles/main/install.sh | bash
 ```
 
 ## System Overview

@@ -6,12 +6,13 @@ REPO_URL="https://github.com/Times-Z/dotfiles.git"
 REPO_NAME="dotfiles"
 
 if [[ ! -t 0 ]]; then
-    if ! command -v git &> /dev/null; then
-        echo "[INFO] git not found, installing..."
-        sudo pacman -S git
-    fi
-    echo "[INFO] Running from pipe, fetching repo..."
+    echo "[INFO] Running from pipe, fetching repository..."
     TMPDIR=$(mktemp -d)
+
+    if ! command -v git &> /dev/null; then
+        sudo pacman -S --needed git
+    fi
+
     git clone --depth=1 "$REPO_URL" "$TMPDIR/$REPO_NAME"
     cd "$TMPDIR/$REPO_NAME"
     exec bash install.sh "$@"
