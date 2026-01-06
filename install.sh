@@ -4,8 +4,9 @@ set -e
 REPO_URL="https://github.com/Times-Z/dotfiles.git"
 REPO_NAME="dotfiles"
 
-if [[ -z "$DOTFILES_BOOTSTRAPPED" && ! -t 0 ]]; then
-    echo "[INFO] Running from pipe, fetching repository..."
+if [[ "${BASH_SOURCE[0]}" != "$0" || ! -f "$(dirname "${BASH_SOURCE[0]}")/pacman.txt" ]]; then
+    echo "[INFO] Bootstrapping from remote..."
+
     TMPDIR=$(mktemp -d)
 
     if ! command -v git &> /dev/null; then
@@ -13,10 +14,7 @@ if [[ -z "$DOTFILES_BOOTSTRAPPED" && ! -t 0 ]]; then
     fi
 
     git clone --depth=1 "$REPO_URL" "$TMPDIR/$REPO_NAME"
-    cd "$TMPDIR/$REPO_NAME"
-
-    export DOTFILES_BOOTSTRAPPED=1
-    exec bash install.sh "$@"
+    exec bash "$TMPDIR/$REPO_NAME/install.sh" "$@"
     exit 0
 fi
 
