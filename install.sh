@@ -31,17 +31,31 @@ if ! command -v yay &> /dev/null; then
 fi
 
 if [ -f pacman.txt ]; then
-    echo "[INFO] Installing pacman packages from pacman.txt..."
-    sudo pacman -Syu --noconfirm --needed $(grep -vE '^[ \t]*#' pacman.txt | xargs)
+    echo "[INFO] Installing pacman packages..."
+
+    PKGS=$(grep -vE '^[ \t]*#' pacman.txt | xargs)
+
+    sudo pacman -Sy --needed --noconfirm $PKGS || {
+        echo
+        echo "[WARN] Conflicts detected. Switching to interactive mode..."
+        sudo pacman -Syu --needed $PKGS
+    }
 else
-    echo "[WARN] pacman.txt not found, skipping pacman packages."
+    echo "[WARN] pacman.txt not found."
 fi
 
 if [ -f yay.txt ]; then
-    echo "[INFO] Installing AUR packages from yay.txt..."
-    yay -S --needed --noconfirm $(grep -vE '^[ \t]*#' yay.txt | xargs)
+    echo "[INFO] Installing AUR packages..."
+
+    YAY_PKGS=$(grep -vE '^[ \t]*#' yay.txt | xargs)
+
+    yay -Sy --needed --noconfirm $YAY_PKGS || {
+        echo
+        echo "[WARN] AUR conflicts detected. Switching to interactive mode..."
+        yay -S --needed $YAY_PKGS
+    }
 else
-    echo "[WARN] yay.txt not found, skipping AUR packages."
+    echo "[WARN] yay.txt not found."
 fi
 
 echo "[INFO] All packages installed."
