@@ -45,7 +45,7 @@ if [ -f pacman.txt ]; then
     if [ $status -ne 0 ]; then
         echo
         echo "[WARN] Conflicts detected. Switching to interactive mode..."
-        sudo pacman -Syu --needed $PKGS
+        sudo pacman -Syu --needed $PKGS < /dev/tty
     fi
     set -e
 else
@@ -65,7 +65,7 @@ if [ -f yay.txt ]; then
     if [ $status -ne 0 ]; then
         echo
         echo "[WARN] AUR conflicts detected. Switching to interactive mode..."
-        yay -S --needed $YAY_PKGS
+        yay -S --needed $YAY_PKGS < /dev/tty
     fi
 
     set -e
