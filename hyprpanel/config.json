@@ -427,30 +427,6 @@
         "systray",
         "notifications"
       ]
-    },
-    "1": {
-      "left": [
-        "dashboard",
-        "workspaces",
-        "cpu",
-        "ram",
-        "storage",
-        "media",
-        "cava"
-      ],
-      "middle": [
-        "windowtitle"
-      ],
-      "right": [
-        "updates",
-        "clock",
-        "network",
-        "volume",
-        "microphone",
-        "bluetooth",
-        "systray",
-        "notifications"
-      ]
     }
   },
   "theme.bar.floating": false,
@@ -582,7 +558,7 @@
   "bar.customModules.cava.icon": "",
   "bar.customModules.cava.showIcon": false,
   "bar.customModules.cava.spaceCharacter": " ",
-  "bar.customModules.cava.showActiveOnly": false,
+  "bar.customModules.cava.showActiveOnly": true,
   "bar.customModules.cava.bars": 15,
   "bar.customModules.cava.noiseReduction": 0.1,
   "bar.media.show_active_only": true,

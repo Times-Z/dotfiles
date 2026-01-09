@@ -1,3 +1,4 @@
+act
 alacritty
 alsa-utils
 amd-ucode
@@ -52,6 +53,7 @@ grim
 grub
 gst-plugin-pipewire
 gvfs-smb
+haveged
 htop
 hugo
 hypridle
@@ -135,6 +137,7 @@ qt5-wayland
 qt6-wayland
 ranger
 rkhunter
+rng-tools
 rocm-smi-lib
 rofi
 rsync
