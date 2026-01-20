@@ -15,9 +15,9 @@ hyprmon-bin
 hyprsettings-git
 lsfg-vk
 marp-cli-bin
+obs-tuna
 pokemon-colorscripts-git
 protonplus
-protontricks
 python-gpustat
 reshade-steam-proton-git
 smile

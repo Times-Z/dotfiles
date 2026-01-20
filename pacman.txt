@@ -3,6 +3,7 @@ alacritty
 alsa-utils
 amd-ucode
 amdgpu_top
+android-udev
 arch-audit
 archinstall
 argyllcms
@@ -52,6 +53,8 @@ godot-mono
 grim
 grub
 gst-plugin-pipewire
+gvfs-gphoto2
+gvfs-mtp
 gvfs-smb
 haveged
 htop
@@ -88,6 +91,7 @@ mesa-demos
 mesa-utils
 minicom
 mpv
+mtpfs
 nano
 nautilus
 ncdu
@@ -119,6 +123,7 @@ otf-opendyslexic-nerd
 otf-overpass-nerd
 pacman-contrib
 pavucontrol
+peek
 perl-image-exiftool
 picocom
 pipewire
@@ -129,6 +134,7 @@ polkit-gnome
 polkit-kde-agent
 pop-gtk-theme
 portmidi
+protontricks
 pwgen
 python-pip
 python-pywal
