@@ -19,9 +19,11 @@ obs-tuna
 pokemon-colorscripts-git
 protonplus
 python-gpustat
+python313
 reshade-steam-proton-git
 smile
 streamcontroller
+streamrip
 tidal-hifi-bin
 ttf-delugia-code
 vencord-bin

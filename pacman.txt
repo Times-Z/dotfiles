@@ -136,6 +136,7 @@ pop-gtk-theme
 portmidi
 protontricks
 pwgen
+python-levenshtein
 python-pip
 python-pywal
 qemu-base
