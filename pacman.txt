@@ -8,12 +8,12 @@ arch-audit
 archinstall
 argyllcms
 audacity
+awww
 base
 base-devel
 blueman
 bluez
 bluez-utils
-bridge-utils
 brightnessctl
 btop
 btrfs-progs
@@ -35,6 +35,7 @@ dotnet-sdk
 edk2-ovmf
 efibootmgr
 element-desktop
+evtest
 eza
 fastfetch
 firefox
@@ -52,6 +53,7 @@ go
 godot-mono
 grim
 grub
+gsfonts
 gst-plugin-pipewire
 gvfs-gphoto2
 gvfs-mtp
@@ -71,6 +73,7 @@ iwd
 jq
 kdenlive
 kitty
+kubectl
 kvantum-qt5
 lazygit
 less
@@ -99,14 +102,17 @@ neovim
 network-manager-applet
 networkmanager
 nftables
+nmap
 noise-suppression-for-voice
 noto-fonts
 noto-fonts-cjk
 noto-fonts-extra
+nss-mdns
 nvme-cli
 obs-studio
 obsidian
 occt
+ollama
 openrgb
 os-prober
 otf-aurulent-nerd
@@ -122,6 +128,7 @@ otf-monaspace-nerd
 otf-opendyslexic-nerd
 otf-overpass-nerd
 pacman-contrib
+pandoc-cli
 pavucontrol
 peek
 perl-image-exiftool
@@ -145,6 +152,8 @@ qt6-wayland
 ranger
 rkhunter
 rng-tools
+rocm-hip-sdk
+rocm-opencl-sdk
 rocm-smi-lib
 rofi
 rsync
@@ -158,6 +167,7 @@ sdl2_mixer
 sdl2_ttf
 seahorse
 sfml
+shellcheck
 slock
 slurp
 smartmontools
@@ -166,8 +176,8 @@ strace
 stress
 stress-ng
 swayidle
-swww
 sysstat
+system-config-printer
 terminus-font
 tiled
 tk
@@ -227,6 +237,7 @@ ttf-ubuntu-mono-nerd
 ttf-ubuntu-nerd
 ttf-victor-mono-nerd
 ttf-zed-mono-nerd
+usb_modeswitch
 usbutils
 v4l2loopback-dkms
 vde2
