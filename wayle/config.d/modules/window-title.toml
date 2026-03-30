@@ -1,0 +1,10 @@
+[modules.window-title]
+format = "{{ title }}"
+icon-show = true
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+label-show = true
+label-color = "fg-default"
+label-max-length = 50
+button-bg-color = "bg-elevated"
+border-show = false

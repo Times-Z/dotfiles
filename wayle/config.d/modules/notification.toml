@@ -1,0 +1,13 @@
+[modules.notification]
+icon-show = true
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+label-show = false
+button-bg-color = "bg-elevated"
+border-show = false
+left-click = "dropdown:notification"
+right-click = "wayle notify dnd"
+popup-position = "top-right"
+popup-max-visible = 5
+popup-duration = 5000
+popup-hover-pause = true

@@ -1,0 +1,12 @@
+[modules.storage]
+poll-interval-ms = 30000
+mount-point = "/"
+format = "{{ percent }}%"
+icon-show = true
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+label-show = true
+label-color = "fg-default"
+button-bg-color = "bg-elevated"
+border-show = false
+left-click = "kitty ncdu /"

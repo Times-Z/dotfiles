@@ -1,0 +1,6 @@
+[schema]
+enabled = true
+
+[[schemas]]
+path = "./schema.json"
+include = ["*.toml"]

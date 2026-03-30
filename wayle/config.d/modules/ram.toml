@@ -1,0 +1,11 @@
+[modules.ram]
+poll-interval-ms = 5000
+format = "{{ percent }}%"
+icon-show = true
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+label-show = true
+label-color = "fg-default"
+button-bg-color = "bg-elevated"
+border-show = false
+left-click = "kitty btop"

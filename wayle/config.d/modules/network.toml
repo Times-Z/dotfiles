@@ -1,0 +1,9 @@
+[modules.network]
+icon-show = true
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+label-show = false
+label-max-length = 15
+button-bg-color = "bg-elevated"
+border-show = false
+left-click = "dropdown:network"

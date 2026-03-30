@@ -1,0 +1,15 @@
+[[modules.custom]]
+id = "updates"
+command = "checkupdates 2>/dev/null | wc -l"
+interval-ms = 1440000
+format = "{{ output }}"
+icon-name = "software-update-available-symbolic"
+icon-show = true
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+label-show = true
+label-color = "fg-default"
+button-bg-color = "bg-elevated"
+border-show = false
+hide-if-empty = true
+left-click = "kitty -e yay -Syu"

@@ -35,6 +35,7 @@ vencord-bin
 vesktop-bin
 visual-studio-code-bin
 waybar-cava
+wayle-bin
 windterm-bin
 wlogout
 wlrobs

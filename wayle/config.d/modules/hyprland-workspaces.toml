@@ -1,0 +1,13 @@
+[modules.hyprland-workspaces]
+monitor-specific = false
+show-special = true
+display-mode = "none"
+min-workspace-count = 6
+app-icons-show = true
+app-icons-dedupe = false
+active-indicator = "underline"
+active-color = "accent"
+occupied-color = "fg-default"
+empty-color = "fg-default"
+container-bg-color = "bg-elevated"
+border-show = false

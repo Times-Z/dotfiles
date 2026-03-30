@@ -1,0 +1,6 @@
+[modules.dashboard]
+border-show = false
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+button-bg-color = "bg-elevated"
+left-click = "dropdown:dashboard"

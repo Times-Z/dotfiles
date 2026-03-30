@@ -36,9 +36,11 @@ curl -fsSL https://raw.githubusercontent.com/Times-Z/dotfiles/main/install.sh | 
 ### Rofi
 ![Rofi](.assets/rofi.jpg)
 
-### Hyprpanel (with notifications)
-![Waybar](.assets/bar.jpg)
+### Wayle (with notifications)
+![wayle bar](.assets/bar.jpg)
+
 ![Notifications](.assets/notifications.jpg)
+
 ![Notifications](.assets/notifications_panel.jpg)
 
 ### Clipboard

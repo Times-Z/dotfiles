@@ -92,7 +92,6 @@ CONFIG_DIRS=(
     MangoHud
     gpicview
     hypr
-    hyprpanel
     kitty
     lsfg-vk
     nvim
@@ -100,6 +99,7 @@ CONFIG_DIRS=(
     rofi
     systemd
     waybar
+    wayle
     wireplumber
     xdg-desktop-portal
 )

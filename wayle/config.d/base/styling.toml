@@ -1,0 +1,15 @@
+[styling]
+theme-provider = "wayle"
+rounding = "none"
+
+[styling.palette]
+bg = "#11111b"
+surface = "#1A1A1A"
+elevated = "#2a2a40"
+fg = "#c4c7c5"
+fg-muted = "#585b70"
+primary = "#883696"
+red = "#e46870"
+yellow = "#fab387"
+green = "#a6e3a1"
+blue = "#b4beff"

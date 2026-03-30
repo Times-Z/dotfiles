@@ -1,0 +1,8 @@
+[modules.bluetooth]
+icon-show = true
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+label-show = false
+button-bg-color = "bg-elevated"
+border-show = false
+left-click = "dropdown:bluetooth"

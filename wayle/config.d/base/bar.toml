@@ -1,0 +1,30 @@
+[bar]
+scale = 1
+location = "top"
+rounding = "none"
+background-opacity = 80
+bg = "bg-base"
+border-location = "bottom"
+border-width = 1
+border-color = "#c065d1"
+button-rounding = "none"
+button-label-size = 1.2
+button-label-weight = "medium"
+button-variant = "block-prefix"
+button-bg-opacity = 100
+
+[[bar.layout]]
+monitor = "*"
+show = true
+left = ["dashboard", "hyprland-workspaces", "cpu", "ram", "storage", "media"]
+center = ["window-title"]
+right = [
+    "custom-updates",
+    "clock",
+    "network",
+    "volume",
+    "microphone",
+    "bluetooth",
+    "systray",
+    "notifications",
+]

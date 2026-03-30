@@ -1,0 +1,13 @@
+[modules.media]
+format = "{{ title }} by {{ artist }}"
+icon-show = true
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+label-show = true
+label-color = "fg-default"
+label-max-length = 35
+button-bg-color = "bg-elevated"
+border-show = false
+left-click = "dropdown:media"
+players-ignored = ["Ankama Launcher", "chromium.*", "playerctld"]
+player-priority = ["tidal-hifi"]

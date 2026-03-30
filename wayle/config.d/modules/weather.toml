@@ -1,0 +1,13 @@
+[modules.weather]
+provider = "open-meteo"
+location = "44.78,-0.55"
+units = "metric"
+format = "{{ temp }}{{ temp_unit }}"
+icon-show = true
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+label-show = true
+label-color = "fg-default"
+button-bg-color = "bg-elevated"
+border-show = false
+left-click = "dropdown:weather"
