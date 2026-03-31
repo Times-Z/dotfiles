@@ -1,0 +1,16 @@
+[modules.cava]
+bars = 20
+bar-width = 6
+bar-gap = 1
+framerate = 60
+low-cutoff = 50
+high-cutoff = 17000
+noise-reduction = 0.65
+style = "wave"
+direction = "normal"
+source = "auto"
+input = "pipe-wire"
+stereo = false
+color = "accent"
+button-bg-color = "bg-elevated"
+border-show = false

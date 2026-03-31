@@ -16,7 +16,7 @@ button-bg-opacity = 100
 [[bar.layout]]
 monitor = "*"
 show = true
-left = ["dashboard", "hyprland-workspaces", "cpu", "ram", "storage", "media"]
+left = ["dashboard", "hyprland-workspaces", "cpu", "ram", "storage", "media", "cava"]
 center = ["window-title"]
 right = [
     "custom-updates",
@@ -28,3 +28,4 @@ right = [
     "systray",
     "notifications",
 ]
+

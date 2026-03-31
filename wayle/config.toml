@@ -1,3 +1,5 @@
+# Wayle configuration entrypoint
+
 imports = [
     "config.d/base/general.toml",
     "config.d/base/styling.toml",
@@ -8,6 +10,7 @@ imports = [
     "config.d/modules/ram.toml",
     "config.d/modules/storage.toml",
     "config.d/modules/media.toml",
+    "config.d/modules/cava.toml",
     "config.d/modules/window-title.toml",
     "config.d/modules/clock.toml",
     "config.d/modules/network.toml",
