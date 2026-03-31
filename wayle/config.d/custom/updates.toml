@@ -1,8 +1,57 @@
 [[modules.custom]]
 id = "updates"
-command = "checkupdates 2>/dev/null | wc -l"
+command = '''
+pacman_updates="$(checkupdates 2>/dev/null || true)"
+aur_updates="$(yay -Qua 2>/dev/null || true)"
+
+count_lines() {
+	printf '%s\n' "$1" | awk 'NF { c++ } END { print c + 0 }'
+}
+
+format_rows() {
+	section_name="$1"
+	data="$2"
+
+	printf '%s\n' "$section_name"
+
+	if [ -z "$(printf '%s\n' "$data" | awk 'NF { print; exit }')" ]; then
+		printf '%s\n\n' "- none"
+		return
+	fi
+
+	printf '%s\n' "$data" | awk '
+		NF {
+			split($0, parts, " -> ")
+			left = parts[1]
+			newv = (parts[2] == "" ? "?" : parts[2])
+
+			n = split(left, fields, /[[:space:]]+/)
+			pkg = fields[1]
+			oldv = fields[n]
+
+			printf "- %s : %s to %s\\n", pkg, oldv, newv
+		}
+	'
+	printf '\n'
+}
+
+pacman_count="$(count_lines "$pacman_updates")"
+aur_count="$(count_lines "$aur_updates")"
+total_count=$((pacman_count + aur_count))
+
+pacman_rows="$(format_rows "PACMAN" "$pacman_updates")"
+aur_rows="$(format_rows "AUR" "$aur_updates")"
+
+tooltip_raw="$(printf 'Pacman : %s | Aur : %s\n\n%s\n----------------\n%s' "$pacman_count" "$aur_count" "$pacman_rows" "$aur_rows")"
+
+# Escape JSON-sensitive chars and keep line breaks for tooltip rendering.
+tooltip="$(printf '%s' "$tooltip_raw" | sed -e 's/\\/\\\\/g' -e 's/"/\\"/g' -e ':a;N;$!ba;s/\n/\\n/g')"
+
+printf '{"text":"%s","tooltip":"%s"}\n' "$total_count" "$tooltip"
+'''
 interval-ms = 1440000
 format = "{{ output }}"
+tooltip-format = "Pacman : {{ pacman | default(0) }} | Aur : {{ aur | default(0) }}"
 icon-name = "software-update-available-symbolic"
 icon-show = true
 icon-color = "accent"
@@ -12,4 +61,4 @@ label-color = "fg-default"
 button-bg-color = "bg-elevated"
 border-show = false
 hide-if-empty = true
-left-click = "kitty -e yay -Syu"
+left-click = "kitty -e ~/.config/wayle/scripts/runUpdates.sh -arch"

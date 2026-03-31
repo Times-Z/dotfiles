@@ -39,6 +39,8 @@ curl -fsSL https://raw.githubusercontent.com/Times-Z/dotfiles/main/install.sh | 
 ### Wayle (with notifications)
 ![wayle bar](.assets/bar.jpg)
 
+![updates](.assets/updates.jpg)
+
 ![Notifications](.assets/notifications.jpg)
 
 ![Notifications](.assets/notifications_panel.jpg)
