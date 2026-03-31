@@ -15,7 +15,7 @@ format_rows() {
 	printf '%s\n' "$section_name"
 
 	if [ -z "$(printf '%s\n' "$data" | awk 'NF { print; exit }')" ]; then
-		printf '%s\n\n' "- none"
+		printf '%s\n\n' "none"
 		return
 	fi
 
