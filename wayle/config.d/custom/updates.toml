@@ -29,7 +29,7 @@ format_rows() {
 			pkg = fields[1]
 			oldv = fields[n]
 
-			printf "- %s : %s to %s\\n", pkg, oldv, newv
+			printf "%s %s to %s\\n", pkg, oldv, newv
 		}
 	'
 	printf '\n'
