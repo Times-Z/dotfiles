@@ -20,6 +20,7 @@ btrfs-progs
 calc
 cameractrls
 cava
+clang
 colord
 cups
 darktable
@@ -85,6 +86,7 @@ linux-firmware
 linux-headers
 linux-lts
 linux-lts-headers
+llvm
 loupe
 lutris
 ly
@@ -127,8 +129,8 @@ otf-hermit-nerd
 otf-monaspace-nerd
 otf-opendyslexic-nerd
 otf-overpass-nerd
+packagekit
 pacman-contrib
-pandoc-cli
 pavucontrol
 peek
 perl-image-exiftool
@@ -158,6 +160,7 @@ rocm-smi-lib
 rofi
 rsync
 rust
+rust-wasm
 rxvt-unicode
 satty
 scrcpy
@@ -167,7 +170,6 @@ sdl2_mixer
 sdl2_ttf
 seahorse
 sfml
-shellcheck
 slock
 slurp
 smartmontools

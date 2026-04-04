@@ -63,3 +63,6 @@ esac
 
 echo "Press any key to exit..."
 read -n 1
+
+# Fix, exit the current terminal session
+kill -9 $PPID

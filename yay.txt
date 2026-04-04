@@ -14,6 +14,7 @@ ffbtools-git
 gamescope-session-git
 grimblast-git
 hyprmon-bin
+imhex
 jstest-gtk-git
 lsfg-vk
 marp-cli-bin
