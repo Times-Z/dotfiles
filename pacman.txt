@@ -60,6 +60,7 @@ gvfs-gphoto2
 gvfs-mtp
 gvfs-smb
 haveged
+heaptrack
 htop
 hugo
 hypridle
@@ -69,7 +70,7 @@ hyprlock
 hyprpaper
 hyprpicker
 hyprshot
-iptables-nft
+iptables
 iwd
 jq
 kdenlive
@@ -95,6 +96,7 @@ mangohud
 mesa-demos
 mesa-utils
 minicom
+mission-center
 mpv
 mtpfs
 nano

@@ -27,6 +27,7 @@ python-gpustat
 python313
 reshade-steam-proton-git
 smile
+sone
 streamcontroller
 streamrip
 teamspeak
@@ -36,7 +37,7 @@ vencord-bin
 vesktop-bin
 visual-studio-code-bin
 waybar-cava
-wayle-bin
+wayle-git
 windterm-bin
 wlogout
 wlrobs
