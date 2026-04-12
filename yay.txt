@@ -31,7 +31,6 @@ sone
 streamcontroller
 streamrip
 teamspeak
-tidal-hifi-bin
 ttf-delugia-code
 vencord-bin
 vesktop-bin
