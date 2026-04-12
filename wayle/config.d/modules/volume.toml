@@ -7,5 +7,5 @@ label-color = "fg-default"
 button-bg-color = "bg-elevated"
 border-show = false
 left-click = "dropdown:audio"
-right-click = "pavucontrol"
+right-click = "pavucontrol -t 3"
 middle-click = "wayle audio output-mute"
