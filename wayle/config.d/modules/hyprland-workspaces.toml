@@ -5,6 +5,12 @@ display-mode = "none"
 min-workspace-count = 6
 app-icons-show = true
 app-icons-dedupe = false
+app-icon-map = {
+    "*sone*" = "si-tidal-symbolic",
+    "class:sone" = "si-tidal-symbolic",
+    "class:io.github.lullabyX.sone" = "si-tidal-symbolic",
+    "title:*SONE*" = "si-tidal-symbolic"
+}
 active-indicator = "underline"
 active-color = "accent"
 occupied-color = "fg-default"

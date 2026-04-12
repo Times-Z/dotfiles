@@ -1,3 +1,11 @@
 [modules.systray]
 border-show = false
 button-bg-color = "bg-elevated"
+
+[[modules.systray.overrides]]
+name = "*sone*"
+icon = "si-tidal-symbolic"
+
+[[modules.systray.overrides]]
+name = "*io.github.lullabyX.sone*"
+icon = "si-tidal-symbolic"

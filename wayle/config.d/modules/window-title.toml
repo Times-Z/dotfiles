@@ -1,5 +1,11 @@
 [modules.window-title]
 format = "{{ title }}"
+icon-name = "si-tidal-symbolic"
+icon-mappings = {
+    "*sone*" = "si-tidal-symbolic",
+    "*io.github.lullabyX.sone*" = "si-tidal-symbolic",
+    "title:*SONE*" = "si-tidal-symbolic"
+}
 icon-show = true
 icon-color = "accent"
 icon-bg-color = "bg-elevated"
