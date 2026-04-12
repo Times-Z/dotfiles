@@ -8,7 +8,9 @@ monitor.alsa.rules = [
     actions = {
       update-props = {
         audio.format = "S32LE"
-        audio.rate = 384000
+        api.alsa.period-size = 1024
+        api.alsa.headroom    = 0
+        node.suspend-on-idle = false
       }
     }
   }
