@@ -20,6 +20,7 @@ left = ["dashboard", "hyprland-workspaces", "cpu", "ram", "storage", "media", "c
 center = ["window-title"]
 right = [
     "custom-updates",
+    #"plugin-system-updates",
     "clock",
     "network",
     "volume",

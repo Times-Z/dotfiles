@@ -1,6 +1,7 @@
 [modules.storage]
 poll-interval-ms = 30000
 mount-point = "/"
+# mount-point = ["/", "/mnt/nvme5", "/mnt/sata"]
 format = "{{ percent }}%"
 icon-show = true
 icon-color = "accent"

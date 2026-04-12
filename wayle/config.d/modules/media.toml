@@ -9,5 +9,10 @@ label-max-length = 35
 button-bg-color = "bg-elevated"
 border-show = false
 left-click = "dropdown:media"
-players-ignored = ["Ankama Launcher", "chromium.*", "playerctld"]
-player-priority = ["tidal-hifi"]
+players-ignored = ["*Ankama*", "*brave*"]
+player-priority = ["*io.github.lullabyX.sone*", "*SONE*"]
+player-icons = { 
+    "io.github.lullabyX.sone" = "si-tidal-symbolic",
+    "org.mpris.MediaPlayer2.io.github.lullabyX.sone" = "si-tidal-symbolic",
+    "*SONE*" = "si-tidal-symbolic"
+}

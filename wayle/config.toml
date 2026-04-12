@@ -22,4 +22,5 @@ imports = [
     "config.d/modules/battery.toml",
     "config.d/modules/weather.toml",
     "config.d/custom/updates.toml",
+    "config.d/plugins/updates.toml",
 ]

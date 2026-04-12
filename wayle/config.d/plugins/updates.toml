@@ -1,0 +1,28 @@
+[[modules.plugins]]
+id = "system-updates"
+kind = "wasm"
+wasm-path = "~/.local/share/wayle/plugins/wayle_plugin_update.wasm"
+icon-name = "software-update-available-symbolic"
+interval-ms = 600000
+left-click = "dropdown:plugin-system-updates"
+right-click = "kitty -e ~/.config/wayle/scripts/runUpdates.sh -arch"
+middle-click = ""
+icon-show = true
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+label-show = true
+label-color = "fg-default"
+button-bg-color = "bg-elevated"
+border-show = false
+plugin-config = {
+    max-items = 0,
+    dropdown-height-percent = 50
+}
+command-exec-allowed-prefixes = [
+    "command -v",
+    "checkupdates",
+    "yay -Qua",
+]
+capabilities = [
+    "command.exec"
+]
