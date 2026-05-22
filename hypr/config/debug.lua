@@ -1,0 +1,7 @@
+hl.config({
+    debug = {
+        overlay            = true,
+        enable_stdout_logs = true,
+        disable_logs       = false,
+    },
+})
