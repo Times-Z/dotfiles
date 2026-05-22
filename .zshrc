@@ -80,6 +80,7 @@ plugins=(
 	web-search
 	docker
 	docker-compose
+	fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -90,6 +91,9 @@ export EDITOR="nvim"
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+export GPG_TTY=$(tty)
+export GNUPGHOME="$HOME/.gnupg"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -98,7 +102,6 @@ export LC_ALL=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias spotifydaemon="systemctl --user restart spotifyd.service"
 alias ls='exa -al --tree --level=1 --icons'
 alias clear_packages="sudo pacman -Qtdq | sudo pacman -Rns -"
 
