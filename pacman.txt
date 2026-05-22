@@ -117,7 +117,9 @@ obs-studio
 obsidian
 occt
 ollama
+opencode
 openrgb
+openvpn
 os-prober
 otf-aurulent-nerd
 otf-codenewroman-nerd
@@ -150,6 +152,7 @@ pwgen
 python-levenshtein
 python-pip
 python-pywal
+qbittorrent
 qemu-base
 qt5-wayland
 qt6-wayland
@@ -180,6 +183,7 @@ strace
 stress
 stress-ng
 swayidle
+swtpm
 sysstat
 system-config-printer
 terminus-font
@@ -272,5 +276,6 @@ xsel
 xterm
 yad
 yarn
+yt-dlp
 zram-generator
 zsh
