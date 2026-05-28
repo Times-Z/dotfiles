@@ -98,6 +98,7 @@ CONFIG_DIRS=(
     ranger
     rofi
     systemd
+    vkBasalt
     waybar
     wayle
     wireplumber

@@ -56,6 +56,7 @@ grim
 grub
 gsfonts
 gst-plugin-pipewire
+gtk4
 gvfs-gphoto2
 gvfs-mtp
 gvfs-smb
@@ -69,6 +70,7 @@ hyprland-protocols
 hyprlock
 hyprpaper
 hyprpicker
+hyprpwcenter
 hyprshot
 iptables
 iwd
@@ -143,6 +145,7 @@ pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+pnpm
 polkit-gnome
 polkit-kde-agent
 pop-gtk-theme

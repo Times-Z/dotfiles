@@ -13,8 +13,8 @@ epson-inkjet-printer-escpr
 ffbtools-git
 gamescope-session-git
 grimblast-git
-gtk4-git
 hyprmon-bin
+hyprsysteminfo
 imhex
 jstest-gtk-git
 lsfg-vk
@@ -36,6 +36,7 @@ ttf-delugia-code
 vencord-bin
 vesktop-bin
 visual-studio-code-bin
+vkbasalt
 waybar-cava
 wayle-bin
 windterm-bin
