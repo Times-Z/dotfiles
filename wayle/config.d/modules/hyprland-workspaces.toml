@@ -9,7 +9,6 @@ app-icon-map = {
     "*sone*" = "si-tidal-symbolic",
     "class:sone" = "si-tidal-symbolic",
     "class:io.github.lullabyX.sone" = "si-tidal-symbolic",
-    "title:*SONE*" = "si-tidal-symbolic"
 }
 active-indicator = "underline"
 active-color = "accent"

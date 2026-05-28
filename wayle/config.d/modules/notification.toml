@@ -1,4 +1,4 @@
-[modules.notification]
+[modules.notifications]
 icon-show = true
 icon-color = "accent"
 icon-bg-color = "bg-elevated"
