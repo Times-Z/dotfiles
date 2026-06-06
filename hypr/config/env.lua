@@ -33,7 +33,7 @@ hl.env("XDG_DATA_DIRS", "~/.local/share:/usr/local/share:/usr/share")
 -- Threading for GL (helps old OpenGL games)
 hl.env("mesa_glthread", "true")
 -- Disable unstable Vulkan optimizations under Wayland
-hl.env("WINE_DISABLE_VULKAN_OPWR", "1")
+hl.env("WINE_DISABLE_VULKAN_OPWR", "0")
 -- Run Proton in native Wayland mode
 hl.env("PROTON_ENABLE_WAYLAND", "1")
 -- Allow esync (eventfd synchronization)
