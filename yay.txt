@@ -1,4 +1,3 @@
-ags-hyprpanel-git
 ankama-launcher
 balena-etcher
 bfg
@@ -9,7 +8,6 @@ checkupdates-with-aur
 ckbcomp
 clipse
 downgrade
-epson-inkjet-printer-escpr
 ffbtools-git
 gamescope-session-git
 grimblast-git
@@ -44,4 +42,3 @@ wlogout
 wlrobs
 xboxdrv
 yay
-yay-debug
