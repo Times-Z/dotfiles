@@ -27,6 +27,7 @@ python313
 reshade-steam-proton-git
 smile
 sone
+sone-debug
 streamcontroller
 streamrip
 teamspeak
