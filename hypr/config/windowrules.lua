@@ -12,6 +12,7 @@ hl.window_rule({
     match = { class = "vesktop" },
     no_screen_share = true,
 })
+
 hl.window_rule({
     name  = "no-screen-share-element",
     match = { class = "Element" },
@@ -161,4 +162,15 @@ hl.window_rule({
     float  = true,
     center = true,
     size   = "1920 1080",
+})
+
+-- Hyprland Share Picker
+hl.window_rule({
+    name  = "hyprland-share-picker",
+    match = { class = "hyprland-share-picker" },
+    float   = true,
+    center = true,
+    pin = true,
+    focus_on_activate = true,
+    stay_focused = true,
 })
