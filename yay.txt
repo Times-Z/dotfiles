@@ -1,5 +1,4 @@
 ankama-launcher
-balena-etcher
 bfg
 bluetooth-autoconnect
 brave-bin
@@ -30,7 +29,6 @@ sone
 sone-debug
 streamcontroller
 streamrip
-teamspeak
 ttf-delugia-code
 vencord-bin
 vesktop-bin
