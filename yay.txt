@@ -18,6 +18,7 @@ lsfg-vk
 marp-cli-bin
 new-lg4ff-dkms-git
 obs-tuna
+ocenaudio-bin
 oversteer
 pokemon-colorscripts-git
 protonplus
@@ -34,7 +35,6 @@ vencord-bin
 vesktop-bin
 visual-studio-code-bin
 vkbasalt
-waybar-cava
 wayle-bin
 windterm-bin
 wlogout

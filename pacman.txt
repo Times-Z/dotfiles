@@ -7,7 +7,6 @@ android-udev
 arch-audit
 archinstall
 argyllcms
-audacity
 awww
 base
 base-devel
@@ -19,7 +18,9 @@ btop
 btrfs-progs
 calc
 cameractrls
+cargo-watch
 cava
+clamav
 clang
 colord
 cups
@@ -51,6 +52,7 @@ gnome-disk-utility
 gnome-keyring
 gnu-free-fonts
 go
+go-task
 godot-mono
 grim
 grub
@@ -85,10 +87,12 @@ lib32-gamemode
 lib32-vulkan-mesa-layers
 libpulse
 libva-utils
+linux
 linux-firmware
 linux-headers
 linux-lts
 linux-lts-headers
+llama-cpp
 llvm
 loupe
 lutris
@@ -119,6 +123,7 @@ obs-studio
 obsidian
 occt
 ollama
+ollama-rocm
 opencode
 openrgb
 openvpn
