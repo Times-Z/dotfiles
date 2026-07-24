@@ -1,0 +1,138 @@
+#!/usr/bin/env python3
+import os
+import subprocess
+from pathlib import Path
+from rich.console import Console
+from rich.panel import Panel
+from rich.prompt import Prompt, IntPrompt
+from rich.progress import Progress, SpinnerColumn, BarColumn, TextColumn
+from huggingface_hub import snapshot_download, HfApi
+
+MODELS_DIR = Path("/mnt/sata/models")
+console = Console()
+
+def download_model():
+    model_name = Prompt.ask("Enter model name (e.g. Qwen/Qwen2.5-7B-Instruct-GGUF/qwen2.5-7b-instruct-q8_0.gguf)")
+    if not model_name:
+        console.print("[bold yellow]Download cancelled.[/]")
+        return
+
+    api = HfApi()
+    files = api.list_repo_tree(repo_id=model_name, repo_type="model", recursive=True)
+    gguf_files = [(f.rfilename, getattr(f, "size", 0)) for f in files if f.rfilename.endswith(".gguf")]
+    if not gguf_files:
+        console.print("[bold red]No .gguf files found in repo.[/]")
+        return
+
+    console.print(Panel("[bold cyan]Select files to download[/]", expand=False))
+    for idx, (filename, filesize) in enumerate(gguf_files, 1):
+        size_str = human_size(filesize)
+        console.print(f"  [bold green]{idx:2d}.[/] {filename} ([dim]{size_str}[/])")
+    console.print(f"  [bold green] a.[/] All files\n")
+
+    while True:
+        choice = Prompt.ask("Choose files (numbers, 'a' for all, or 'b' to go back)", default="a")
+        if choice.lower() == 'b':
+            return
+        if choice.lower() == 'a':
+            selected = [f[0] for f in gguf_files]
+            break
+        selected = []
+        try:
+            indices = [int(x.strip()) for x in choice.split(",")]
+            for i in indices:
+                if 1 <= i <= len(gguf_files):
+                    selected.append(gguf_files[i - 1][0])
+                else:
+                    console.print("[bold red]Invalid option, please try again.[/]")
+                    break
+            else:
+                if selected:
+                    break
+        except ValueError:
+            console.print("[bold red]Invalid option, please try again.[/]")
+
+    args = ["hf", "download", model_name, "--local-dir", str(MODELS_DIR)] + selected
+    try:
+        subprocess.run(args, check=True)
+        console.print(f"[bold green]Downloaded {len(selected)} file(s) to:[/] {MODELS_DIR}")
+    except subprocess.CalledProcessError as e:
+        console.print(f"[bold red]Error downloading: {e}[/]")
+    except FileNotFoundError:
+        console.print("[bold red]Error: 'hf' executable not found in PATH.[/]")
+        console.print("[dim]Install with: pip install huggingface_hub[/]")
+
+
+def human_size(size_bytes):
+    for unit in ["B", "KB", "MB", "GB", "TB"]:
+        if size_bytes < 1024:
+            return f"{size_bytes:.1f} {unit}"
+        size_bytes /= 1024
+    return f"{size_bytes:.1f} PB"
+
+def main():
+    if not MODELS_DIR.exists():
+        console.print(f"[bold red]Error:[/] Directory {MODELS_DIR} does not exist.", style="red")
+        return 1
+
+    models = sorted(list(MODELS_DIR.glob("*.gguf")))
+
+    if not models:
+        console.print(f"[bold yellow]No .gguf files found in {MODELS_DIR}[/]")
+        return 1
+
+    console.print(Panel("[bold cyan]Llama-Server Launcher[/]", expand=False))
+    console.print(f"Models found in [green]{MODELS_DIR}[/]:\n")
+
+    for idx, model in enumerate(models, 1):
+        console.print(f"  [bold green]{idx:2d}.[/] {model.name}")
+    console.print(f"  [bold green] d.[/] Download model from Hugging Face\n")
+    console.print(f"  [bold red] q.[/] Quit\n")
+
+    while True:
+        choice = Prompt.ask("Choose a number (or 'q' to quit)", default="q")
+        if choice.lower() == 'q':
+            console.print("[bold yellow]Goodbye![/]")
+            return 0
+        elif choice.lower() == 'd':
+            download_model()
+        
+        try:
+            idx = int(choice)
+            if 1 <= idx <= len(models):
+                selected_model = models[idx - 1]
+                break
+            else:
+                console.print("[bold red]Invalid option, please try again.[/]")
+        except ValueError:
+            console.print("[bold red]Invalid option, please try again.[/]")
+
+    console.print(f"\nSelected model: [bold cyan]{selected_model.name}[/]")
+
+    ctx = IntPrompt.ask("Context size (-c)", default=65536)
+
+    console.print("\n[bold green]Starting llama-server...[/]")
+    console.print("-" * 42)
+
+    cmd = [
+        "llama-server",
+        "-m", str(selected_model),
+        "-c", str(ctx),
+        "--parallel", "1",
+        "-fa", "on",
+        "-ctk", "q8_0",
+        "-ctv", "q8_0",
+        "--no-mmap",
+        "--jinja",
+        "--host", "0.0.0.0",
+        "--port", "8080"
+    ]
+
+    try:
+        os.execvp("llama-server", cmd)
+    except FileNotFoundError:
+        console.print("[bold red]Error: 'llama-server' executable not found in PATH.[/]")
+        return 1
+
+if __name__ == "__main__":
+    exit(main())
