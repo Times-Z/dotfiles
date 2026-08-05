@@ -13,6 +13,7 @@ hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 -- GTK en Wayland (fallback X11)
 hl.env("GDK_BACKEND", "wayland,x11")
 hl.env("GSK_RENDERER", "vulkan")
+hl.env("WLR_RENDERER", "vulkan")
 -- Clutter en Wayland
 hl.env("CLUTTER_BACKEND", "wayland")
 -- Firefox/Thunderbird Wayland

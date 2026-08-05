@@ -14,6 +14,7 @@ hl.monitor({
 require("config.startup")
 require("config.env")
 require("config.input")
+require("config.device")
 require("config.bindings")
 require("config.general")
 require("config.decoration")
