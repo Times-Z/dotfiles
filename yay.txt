@@ -33,6 +33,7 @@ streamrip
 ttf-delugia-code
 vencord-bin
 vesktop-bin
+vial-appimage
 visual-studio-code-bin
 vkbasalt
 wayle-bin
