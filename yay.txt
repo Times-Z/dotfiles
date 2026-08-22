@@ -19,6 +19,7 @@ marp-cli-bin
 new-lg4ff-dkms-git
 obs-tuna
 ocenaudio-bin
+openlogi-bin
 oversteer
 pokemon-colorscripts-git
 protonplus
