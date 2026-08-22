@@ -21,6 +21,7 @@ center = ["window-title"]
 right = [
     "custom-updates",
     #"plugin-system-updates",
+    "custom-mice-battery",
     "clock",
     "network",
     "volume",

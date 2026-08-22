@@ -1,0 +1,24 @@
+[[modules.custom]]
+id = "mice-battery"
+command = "python3 ~/.config/wayle/scripts/openlogi-tray.py"
+interval-ms = 60000
+icon-show = true
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+icon-names = [
+    "battery-level-0-symbolic",
+    "battery-level-10-symbolic",
+    "battery-level-20-symbolic",
+    "battery-level-30-symbolic",
+    "battery-level-40-symbolic",
+    "battery-level-50-symbolic",
+    "battery-level-60-symbolic",
+    "battery-level-70-symbolic",
+    "battery-level-80-symbolic",
+    "battery-level-90-symbolic",
+    "battery-level-100-symbolic",
+]
+label-show = true
+label-color = "fg-default"
+button-bg-color = "bg-elevated"
+border-show = false
