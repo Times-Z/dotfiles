@@ -1,0 +1,14 @@
+[[modules.custom]]
+id = "system-update"
+command = "python3 ~/.config/wayle/scripts/updates.py"
+interval-ms = 60000
+icon-name = "software-update-available-symbolic"
+icon-show = true
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+label-show = true
+label-color = "fg-default"
+button-bg-color = "bg-elevated"
+border-show = false
+hide-if-empty = true
+left-click = "kitty -e ~/.config/wayle/scripts/runUpdates.sh -arch"

@@ -19,9 +19,8 @@ show = true
 left = ["dashboard", "hyprland-workspaces", "cpu", "ram", "storage", "media", "cava"]
 center = ["window-title"]
 right = [
-    "custom-updates",
-    #"plugin-system-updates",
     "custom-mice-battery",
+    "custom-system-update",
     "clock",
     "network",
     "volume",
@@ -30,4 +29,3 @@ right = [
     "systray",
     "notifications",
 ]
-
