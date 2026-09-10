@@ -22,5 +22,5 @@ imports = [
     "config.d/modules/battery.toml",
     "config.d/modules/weather.toml",
     "config.d/custom/system-update.toml",
-    #"config.d/custom/mice-battery.toml"
+    "config.d/custom/mice-battery.toml"
 ]

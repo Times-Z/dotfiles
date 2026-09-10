@@ -8,8 +8,8 @@ from collections.abc import Sequence
 COMMAND_TIMEOUT_SECONDS = 30
 PACMAN_COMMAND = ("checkupdates",)
 AUR_COMMAND = ("yay", "-Qua")
-PACKAGE_MAX_LENGTH = 20
-VERSION_MAX_LENGTH = 24
+PACKAGE_MAX_LENGTH = 30
+VERSION_MAX_LENGTH = 10
 
 
 def run(command: Sequence[str]) -> str:
@@ -53,6 +53,10 @@ def shorten(value: str, max_length: int) -> str:
     return value[: max_length - 3] + "..."
 
 
+def format_version(newv: str, max_length: int) -> str:
+    return shorten(newv, max_length)
+
+
 def format_table(
     pacman_data: str,
     aur_data: str,
@@ -65,7 +69,7 @@ def format_table(
         (
             manager,
             shorten(package, PACKAGE_MAX_LENGTH),
-            shorten(f"{oldv} -> {newv}", VERSION_MAX_LENGTH),
+            format_version(newv, VERSION_MAX_LENGTH),
         )
         for manager, package, oldv, newv in source_rows
     ]

@@ -1,6 +1,6 @@
 [[modules.custom]]
 id = "mice-battery"
-command = "python3 ~/.config/wayle/scripts/openlogi-tray.py"
+command = "python3 ~/.config/wayle/scripts/dbus-tray.py"
 interval-ms = 60000
 icon-show = true
 icon-color = "accent"
