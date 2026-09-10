@@ -96,8 +96,8 @@ CONFIG_DIRS=(
     lsfg-vk
     nvim
     ranger
-    rofi
     systemd
+    fuzzle
     vkBasalt
     streamrip
     waybar

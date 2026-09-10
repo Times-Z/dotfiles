@@ -33,8 +33,8 @@ curl -fsSL https://raw.githubusercontent.com/Times-Z/dotfiles/main/install.sh | 
 ### Terminal
 ![Terminal](.assets/terminal.png)
 
-### Rofi
-![Rofi](.assets/rofi.jpg)
+### Fuzzel
+![fuzzel](.assets/fuzzel.png)
 
 ### Wayle (with notifications)
 ![wayle bar](.assets/bar.jpg)
