@@ -14,6 +14,7 @@ hyprmon-bin
 hyprsysteminfo
 imhex
 jstest-gtk-git
+llama-cpp-rocm-git
 lsfg-vk
 marp-cli-bin
 new-lg4ff-dkms-git
@@ -24,11 +25,11 @@ oversteer
 pokemon-colorscripts-git
 protonplus
 python-gpustat
+python-pywal
 python313
 reshade-steam-proton-git
 smile
 sone
-sone-debug
 streamcontroller
 streamrip
 ttf-delugia-code

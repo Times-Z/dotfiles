@@ -90,7 +90,6 @@ libva-utils
 linux
 linux-firmware
 linux-headers
-llama-cpp
 llvm
 loupe
 lutris
@@ -157,7 +156,6 @@ protontricks
 pwgen
 python-levenshtein
 python-pip
-python-pywal
 qbittorrent
 qemu-base
 qt5-wayland
