@@ -114,8 +114,6 @@ mkdir -p "$HOME/.local/share/fonts"
 cp -rf fonts/* "$HOME/.local/share/fonts/"
 fc-cache -fv
 
-sudo cp -f pipewire.conf.d/samplerate.conf /etc/pipewire/pipewire.conf.d
-
 cp -f .zshrc "$HOME/.zshrc"
 cp -f brave-flags.conf "$HOME/.config/brave-flags.conf"
 cp -f chromium-flags.conf "$HOME/.config/chromium-flags.conf"
