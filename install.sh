@@ -97,12 +97,11 @@ CONFIG_DIRS=(
     nvim
     ranger
     systemd
-    fuzzle
+    fuzzel
     vkBasalt
     streamrip
-    waybar
     wayle
-    wireplumber
+    wireplumber.conf.d
     xdg-desktop-portal
 )
 
