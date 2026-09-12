@@ -116,7 +116,7 @@ fc-cache -fv
 cp -f .zshrc "$HOME/.zshrc"
 cp -f brave-flags.conf "$HOME/.config/brave-flags.conf"
 cp -f chromium-flags.conf "$HOME/.config/chromium-flags.conf"
-cp -f user-dirs.conf "$HOME/.config/user-dirs.conf"
+cp -f user-dirs.dirs "$HOME/.config/user-dirs.dirs"
 cp -f user-dirs.locale "$HOME/.config/user-dirs.locale"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
