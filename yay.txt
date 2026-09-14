@@ -17,9 +17,11 @@ jstest-gtk-git
 llama-cpp-rocm-git
 lsfg-vk
 marp-cli-bin
+minecraft-launcher
 new-lg4ff-dkms-git
 obs-tuna
 ocenaudio-bin
+opencode-desktop-bin
 openlogi-bin
 oversteer
 pokemon-colorscripts-git

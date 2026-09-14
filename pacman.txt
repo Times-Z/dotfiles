@@ -148,6 +148,7 @@ pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+playerctl
 pnpm
 polkit-gnome
 polkit-kde-agent
@@ -168,8 +169,8 @@ rocm-hip-sdk
 rocm-opencl-sdk
 rocm-smi-lib
 rsync
-rust
 rust-wasm
+rustup
 rxvt-unicode
 satty
 scrcpy
