@@ -105,6 +105,7 @@ mpv
 mtpfs
 nano
 nautilus
+nautilus-python
 ncdu
 neovim
 network-manager-applet

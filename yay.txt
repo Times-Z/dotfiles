@@ -1,4 +1,5 @@
 ankama-launcher
+astra-music-bin
 bfg
 bluetooth-autoconnect
 brave-bin
@@ -18,6 +19,7 @@ llama-cpp-rocm-git
 lsfg-vk
 marp-cli-bin
 minecraft-launcher
+nautilus-open-any-terminal-git
 new-lg4ff-dkms-git
 obs-tuna
 ocenaudio-bin
