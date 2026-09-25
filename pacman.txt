@@ -75,6 +75,7 @@ hyprpaper
 hyprpicker
 hyprpwcenter
 hyprshot
+inkscape
 iptables
 iwd
 jq
@@ -142,7 +143,6 @@ otf-overpass-nerd
 packagekit
 pacman-contrib
 pavucontrol
-peek
 perl-image-exiftool
 picocom
 pipewire
