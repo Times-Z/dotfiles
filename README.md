@@ -50,3 +50,7 @@ curl -fsSL https://raw.githubusercontent.com/Times-Z/dotfiles/main/install.sh | 
 
 ### Lockscreen
 ![Lockscreen](.assets/lockscreen.jpg)
+
+## System configs (etc/)
+
+Personalized system files are mirrored under [`etc/`](etc/) and restored with `sudo ./install_system.sh` (fresh-install oriented — overwrites `/etc`)

@@ -1,0 +1,40 @@
+# OpenLogi udev rules
+#
+# Grants the active-seat user read/write access to Logitech HID devices, their
+# input event nodes, and the uinput kernel module — no group membership required
+# on systems running systemd-logind (uaccess tag).
+#
+# Install:
+#   sudo cp 70-openlogi.rules /etc/udev/rules.d/
+#   sudo udevadm control --reload-rules
+#   sudo udevadm trigger
+#
+# Non-systemd fallback (SysV init, OpenRC, etc.):
+#   Replace TAG+="uaccess" with MODE="0660", GROUP="input" and add your user to
+#   the 'input' group: sudo usermod -aG input $USER  (re-login required).
+
+# Logitech HID++ receivers and directly-connected devices (hidraw interface).
+# Two rules are needed to cover both transports:
+#   - USB / Unifying / Bolt receivers: ATTRS{idVendor} walks the USB sysfs chain.
+#   - Bluetooth (uhid virtual bus): ATTRS{idVendor} is absent; match on the HID
+#     kernel name format "bus:VID:PID.iface" whose VID field is always uppercase.
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", TAG+="uaccess"
+SUBSYSTEM=="hidraw", KERNELS=="*:046D:*", TAG+="uaccess"
+
+# uinput virtual device node — needed for the evdev/uinput input hook.
+# OPTIONS+="static_node=uinput" creates the node at boot even before any device
+# is plugged in, so the agent can open it without a trigger.
+KERNEL=="uinput", TAG+="uaccess", OPTIONS+="static_node=uinput"
+
+# Logitech pointer event nodes (evdev interface) — the read side of the hook.
+# hidraw alone is not enough: the hook enumerates /dev/input/event* to grab the
+# pointer. USB devices already get uaccess from logind's seat rules, but a
+# Bluetooth mouse hangs off /devices/virtual/misc/uhid, which belongs to no
+# seat, so those rules never tag it and its event node stays root:input 0660.
+#
+# Scoped to event nodes the kernel classifies as a mouse (ID_INPUT_MOUSE, set by
+# the input_id builtin in 60-input-id.rules, which runs before this file): a
+# Logitech keyboard's keystrokes must never become readable session-wide. The
+# two matchers cover the same two transports as the hidraw block above.
+SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_MOUSE}=="1", ATTRS{idVendor}=="046d", TAG+="uaccess"
+SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_MOUSE}=="1", KERNELS=="*:046D:*", TAG+="uaccess"

@@ -103,6 +103,9 @@ CONFIG_DIRS=(
     wayle
     wireplumber.conf.d
     xdg-desktop-portal
+    fontconfig
+    gtk-4.0
+    pipewire
 )
 
 for dir in "${CONFIG_DIRS[@]}"; do
@@ -114,6 +117,7 @@ cp -rf fonts/* "$HOME/.local/share/fonts/"
 fc-cache -fv
 
 cp -f .zshrc "$HOME/.zshrc"
+cp -f .zprofile "$HOME/.zprofile"
 cp -f .makepkg.conf "$HOME/.makepkg.conf"
 cp -f brave-flags.conf "$HOME/.config/brave-flags.conf"
 cp -f chromium-flags.conf "$HOME/.config/chromium-flags.conf"

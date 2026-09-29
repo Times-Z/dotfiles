@@ -26,6 +26,7 @@ ocenaudio-bin
 opencode-desktop-bin
 openlogi-bin
 oversteer
+pacseek
 pokemon-colorscripts-git
 protonplus
 python-gpustat

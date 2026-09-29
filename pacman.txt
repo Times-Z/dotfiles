@@ -17,7 +17,6 @@ brightnessctl
 btop
 btrfs-progs
 calc
-cameractrls
 cargo-watch
 cava
 clamav
@@ -34,6 +33,7 @@ docker
 docker-buildx
 docker-compose
 dotnet-sdk
+earlyoom
 edk2-ovmf
 efibootmgr
 element-desktop
@@ -57,6 +57,7 @@ go-task
 godot-mono
 grim
 grub
+grub-btrfs
 gsfonts
 gst-plugin-pipewire
 gtk4
@@ -76,6 +77,7 @@ hyprpicker
 hyprpwcenter
 hyprshot
 inkscape
+inotify-tools
 iptables
 iwd
 jq
@@ -120,6 +122,7 @@ noto-fonts-extra
 nss-mdns
 nvme-cli
 obs-studio
+obs-studio-plugin-browser
 obsidian
 occt
 ollama
@@ -164,6 +167,7 @@ qemu-base
 qt5-wayland
 qt6-wayland
 ranger
+reflector
 rkhunter
 rng-tools
 rocm-hip-sdk
@@ -184,6 +188,8 @@ sfml
 slock
 slurp
 smartmontools
+snap-pac
+snapper
 steam
 strace
 stress
@@ -251,6 +257,7 @@ ttf-ubuntu-mono-nerd
 ttf-ubuntu-nerd
 ttf-victor-mono-nerd
 ttf-zed-mono-nerd
+ufw
 usb_modeswitch
 usbutils
 v4l2loopback-dkms

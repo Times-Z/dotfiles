@@ -1,0 +1,5 @@
+# Espressif USB-JTAG/Serial
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="303a", MODE="0660", GROUP="uucp", TAG+="uaccess"
+
+# CH340
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="1a86", MODE="0660", GROUP="uucp", TAG+="uaccess"
