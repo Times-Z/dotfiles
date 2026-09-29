@@ -114,6 +114,7 @@ cp -rf fonts/* "$HOME/.local/share/fonts/"
 fc-cache -fv
 
 cp -f .zshrc "$HOME/.zshrc"
+cp -f .makepkg.conf "$HOME/.makepkg.conf"
 cp -f brave-flags.conf "$HOME/.config/brave-flags.conf"
 cp -f chromium-flags.conf "$HOME/.config/chromium-flags.conf"
 cp -f user-dirs.dirs "$HOME/.config/user-dirs.dirs"
