@@ -1,0 +1,14 @@
+[[modules.custom]]
+id = "system-check"
+command = "python3 ~/.config/wayle/scripts/system-check"
+interval-ms = 6000
+icon-map = { ok = "tb-shield-check-symbolic", alert = "tb-alert-triangle-symbolic", default = "tb-shield-check-symbolic" }
+icon-show = true
+icon-color = "accent"
+icon-bg-color = "bg-elevated"
+left-click = "kitty -e ~/.config/wayle/scripts/.venv-check/bin/python ~/.config/wayle/scripts/system-check --tui"
+right-click = "kitty -e ~/.config/wayle/scripts/.venv-check/bin/python ~/.config/wayle/scripts/system-check --run-updates"
+label-show = true
+label-color = "fg-default"
+button-bg-color = "bg-elevated"
+border-show = false

@@ -39,11 +39,16 @@ curl -fsSL https://raw.githubusercontent.com/Times-Z/dotfiles/main/install.sh | 
 ### Wayle (with notifications)
 ![wayle bar](.assets/bar.jpg)
 
-![updates](.assets/updates.jpg)
-
 ![Notifications](.assets/notifications.jpg)
 
 ![Notifications](.assets/notifications_panel.jpg)
+
+#### Wayle system check custom module
+![sys check](.assets/system_check_module.png)
+![sys check](.assets/sys_check1.png)
+![sys check](.assets/sys_check2.png)
+![sys check](.assets/sys_check3.png)
+![sys check](.assets/sys_check4.png)
 
 ### Clipboard
 ![Clipboard](.assets/clipboard.jpg)

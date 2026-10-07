@@ -19,8 +19,8 @@ show = true
 left = ["dashboard", "hyprland-workspaces", "cpu", "ram", "storage", "media", "cava"]
 center = ["window-title"]
 right = [
+    "custom-system-check",
     "custom-mice-battery",
-    "custom-system-update",
     "clock",
     "network",
     "volume",
