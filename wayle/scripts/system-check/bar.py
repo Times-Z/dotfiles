@@ -19,7 +19,7 @@ def main() -> None:
     updates = freshen_updates()
     blind = updates is None or len(updates["missing"]) == len(UPDATE_SOURCES)
     payload = {
-        "text": "check" if blind else str(len(updates["records"])),
+        "text": "0" if blind else str(len(updates["records"])),
         "alt": alt,
         "tooltip": format_rows(rows),
     }
