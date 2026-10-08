@@ -102,7 +102,7 @@ export GNUPGHOME="$HOME/.gnupg"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls='exa -al --tree --level=1 --icons'
+alias ls='exa -al --tree --level=1 --icons=always'
 alias clear_packages="sudo pacman -Qtdq | sudo pacman -Rns -"
 
 pokemon-colorscripts -r --no-title
